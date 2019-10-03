@@ -21,7 +21,7 @@ int main(int argc, char *argv[])
   char hostname[MPI_MAX_PROCESSOR_NAME];
   MPI_Get_processor_name(hostname, &len);
 
-  printf("Hello from task %2d running on node: %s\n", taskid, hostname);
+  printf("Hello World from task %2d running on node: %s\n", taskid, hostname);
 
   // Only one processor will do this
   if (taskid == MASTER)
