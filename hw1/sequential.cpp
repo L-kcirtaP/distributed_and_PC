@@ -4,16 +4,43 @@
 
 
 void odd_even_sort(double *array, int size){
-    for (int i = 0; i < size; i++) {
-        array[i] = i;
+    bool sorted = false;
+    
+    while (!sorted) {
+        sorted = true;
+
+        // sort in odd positions
+        for (int i = 0; i < size; i += 2) {
+            if (array[i] > array[i+1]) {
+                int temp = array[i];
+                array[i] = array[i+1];
+                array[i+1] = temp;
+                sorted = false;
+            }
+        }
+
+        // sort in even positions
+        for (int i = 1; i < size; i += 2) {
+            if (array[i] > array[i+1]) {
+                int temp = array[i];
+                array[i] = array[i+1];
+                array[i+1] = temp;
+                sorted = false;
+            }
+        }
     }
 
     return;
 }
 
+
 int main(int argc, char *argv[]) {
     int size = atoi(argv[1]);
     double array[size];
+
+    for (int i = 0; i < size; i++) {
+        array[i] = rand() % 100;
+    }
 
     odd_even_sort(array, size);
 
