@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "cstdlib": "cpp",
+        "__tuple": "cpp",
+        "array": "cpp"
+    }
+}
