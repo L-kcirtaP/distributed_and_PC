@@ -1,0 +1,76 @@
+MPI task 0 has started on master [total number of processors 1]
+Using 1 tasks to scan 40000000 numbers...
+Done.
+Largest prime is 39999983.
+Total number of primes found: 2433913
+Wall clock time elapsed: 17.27 seconds
+MPI task 1 has started on master [total number of processors 2]
+MPI task 0 has started on master [total number of processors 2]
+Using 2 tasks to scan 40000000 numbers...
+Done.
+Largest prime is 39999983.
+Total number of primes found: 2433913
+Wall clock time elapsed: 9.93 seconds
+MPI task 0 has started on master [total number of processors 3]
+Using 3 tasks to scan 40000000 numbers...
+MPI task 1 has started on master [total number of processors 3]
+MPI task 2 has started on master [total number of processors 3]
+Done.
+Largest prime is 39999983.
+Total number of primes found: 2433913
+Wall clock time elapsed: 10.76 seconds
+MPI task 3 has started on master [total number of processors 4]
+MPI task 2 has started on master [total number of processors 4]
+MPI task 0 has started on master [total number of processors 4]
+Using 4 tasks to scan 40000000 numbers...
+MPI task 1 has started on master [total number of processors 4]
+Done.
+Largest prime is 39999983.
+Total number of primes found: 2433913
+Wall clock time elapsed: 5.01 seconds
+MPI task 3 has started on master [total number of processors 5]
+MPI task 2 has started on master [total number of processors 5]
+MPI task 4 has started on master [total number of processors 5]
+MPI task 0 has started on master [total number of processors 5]
+Using 5 tasks to scan 40000000 numbers...
+MPI task 1 has started on master [total number of processors 5]
+Done.
+Largest prime is 39999983.
+Total number of primes found: 2433913
+Wall clock time elapsed: 5.33 seconds
+MPI task 5 has started on slave1 [total number of processors 6]
+MPI task 1 has started on master [total number of processors 6]
+MPI task 0 has started on master [total number of processors 6]
+Using 6 tasks to scan 40000000 numbers...
+MPI task 2 has started on master [total number of processors 6]
+MPI task 3 has started on master [total number of processors 6]
+MPI task 4 has started on master [total number of processors 6]
+Done.
+Largest prime is 39999983.
+Total number of primes found: 2433913
+Wall clock time elapsed: 5.20 seconds
+MPI task 6 has started on slave1 [total number of processors 7]
+MPI task 5 has started on slave1 [total number of processors 7]
+MPI task 1 has started on master [total number of processors 7]
+MPI task 2 has started on master [total number of processors 7]
+MPI task 4 has started on master [total number of processors 7]
+MPI task 0 has started on master [total number of processors 7]
+Using 7 tasks to scan 40000000 numbers...
+MPI task 3 has started on master [total number of processors 7]
+Done.
+Largest prime is 39999983.
+Total number of primes found: 2433913
+Wall clock time elapsed: 3.64 seconds
+MPI task 7 has started on slave1 [total number of processors 8]
+MPI task 0 has started on master [total number of processors 8]
+Using 8 tasks to scan 40000000 numbers...
+MPI task 5 has started on slave1 [total number of processors 8]
+MPI task 1 has started on master [total number of processors 8]
+MPI task 6 has started on slave1 [total number of processors 8]
+MPI task 2 has started on master [total number of processors 8]
+MPI task 3 has started on master [total number of processors 8]
+MPI task 4 has started on master [total number of processors 8]
+Done.
+Largest prime is 39999983.
+Total number of primes found: 2433913
+Wall clock time elapsed: 2.72 seconds
