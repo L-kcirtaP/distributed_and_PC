@@ -10,7 +10,7 @@ void odd_even_sort(double *array, int size){
         sorted = true;
 
         // sort in odd positions
-        for (int i = 0; i < size; i += 2) {
+        for (int i = 0; i < size-1; i += 2) {
             if (array[i] > array[i+1]) {
                 int temp = array[i];
                 array[i] = array[i+1];
@@ -20,7 +20,7 @@ void odd_even_sort(double *array, int size){
         }
 
         // sort in even positions
-        for (int i = 1; i < size; i += 2) {
+        for (int i = 1; i < size-1; i += 2) {
             if (array[i] > array[i+1]) {
                 int temp = array[i];
                 array[i] = array[i+1];
@@ -39,7 +39,7 @@ int main(int argc, char *argv[]) {
     double array[size];
 
     for (int i = 0; i < size; i++) {
-        array[i] = rand() % 100;
+        array[i] = rand() % 100000;
     }
 
     odd_even_sort(array, size);
