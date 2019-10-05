@@ -1,0 +1,9 @@
+#!/bin/bash
+#PBS -l nodes=1:ppn=5,mem=1g,walltime=72:00:00
+#PBS -q batch
+#PBS -m abe
+#PBS -V
+
+timeout 60 mpiexec -n 11 -f /home/mpi_config /code/116010151/parallel 100 >> /code/116010151/output_11.txt
+timeout 60 mpiexec -n 11 -f /home/mpi_config /code/116010151/parallel 10000 >> /code/116010151/output_11.txt
+timeout 60 mpiexec -n 11 -f /home/mpi_config /code/116010151/parallel 500000 >> /code/116010151/output_11.txt

@@ -40,17 +40,17 @@ int main(int argc, char *argv[]) {
     double array[size];
     clock_t start, end;
 
-    for (int i = 0; i < size; i++) {
-        array[i] = rand() % 100000;
-    }
+    // for (int i = 0; i < size; i++) {
+    //     array[i] = rand() % 100000;
+    // }
 
     start = clock();
     odd_even_sort(array, size);
     end = clock();
 
-    for (int i = 0; i < size; i++) {
-        printf("%8f ", array[i]);
-    }
+    // for (int i = 0; i < size; i++) {
+    //     printf("%8f ", array[i]);
+    // }
     printf("\nTotal elapsed time: %8fs\n", ((double)end-(double)start)/CLOCKS_PER_SEC);
 
     return 0;

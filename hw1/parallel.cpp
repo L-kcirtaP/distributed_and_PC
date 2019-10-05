@@ -36,12 +36,12 @@ int main(int argc, char* argv[]) {
     srand(2019 + (rank<<2));
 
     if (rank == ROOT) {
-        printf("The %d-dim Array Before Sorting:\t", global_n);
+        // printf("The %d-dim Array Before Sorting:\t", global_n);
         for (int i = 0; i < global_n; i++) {
             global_arr[i] = rand() % 10000;
-            printf("%d\t", global_arr[i]);
+            // printf("%d\t", global_arr[i]);
         }
-        printf("\n");
+        // printf("\n");
         for (int i = global_n; i < global_n+additional; i++)
             global_arr[i] = PLACEHOLDER;
     }
@@ -57,10 +57,10 @@ int main(int argc, char* argv[]) {
     MPI_Barrier(MPI_COMM_WORLD);
 
     if (rank == ROOT) {
-        printf("The %d-dim Array After Sorting:\t\t", global_n);
-        for (int i = additional; i < global_n+additional; i++)
-            printf("%d\t", global_arr[i]);
-        printf("\n");
+        // printf("The %d-dim Array After Sorting:\t\t", global_n);
+        // for (int i = additional; i < global_n+additional; i++)
+        //     printf("%d\t", global_arr[i]);
+        // printf("\n");
         printf("Elapsed time = %e seconds\n", finish_time-start_time);
     }
 
