@@ -61,7 +61,7 @@ int main(int argc, char* argv[]) {
         // for (int i = additional; i < global_n+additional; i++)
         //     printf("%d\t", global_arr[i]);
         // printf("\n");
-        printf("Elapsed time = %e seconds\n", finish_time-start_time);
+        printf("%d Processes %d Elements: Elapsed Time = %e seconds\n", num_p, global_n,finish_time-start_time);
     }
 
     MPI_Finalize();
