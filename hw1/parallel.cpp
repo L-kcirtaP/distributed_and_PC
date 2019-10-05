@@ -11,7 +11,7 @@ void sort(int* local_arr, int local_n, int rank, int num_p);
 
 int main(int argc, char* argv[]) {
 
-    int global_n = 50;
+    int global_n = 10;
     int* global_arr;
     int* local_arr;
     int rank, num_p, local_n;
@@ -35,9 +35,13 @@ int main(int argc, char* argv[]) {
     srand(2019 + (rank<<2));
 
     if (rank == ROOT) {
-        for (int i = 0; i < global_n; i++)
+        printf("The %d-dim Array Before Sorting:\t", global_n);
+        for (int i = 0; i < global_n; i++) {
             global_arr[i] = rand() % 10000;
-        for (int i = global_n-1; i < global_n+additional; i++)
+            printf("%d\t", global_arr[i]);
+        }
+        printf("\n");
+        for (int i = global_n; i < global_n+additional; i++)
             global_arr[i] = 0;
     }
         
@@ -49,10 +53,15 @@ int main(int argc, char* argv[]) {
 
     MPI_Gather(local_arr, local_n, MPI_INT, global_arr, local_n, MPI_INT, ROOT, MPI_COMM_WORLD);
 
-    if (rank == ROOT)
-        // printf("Elapsed time = %e seconds\n", finish_time-start_time);
-        for (int i = additional; i < global_n; i++)
-            printf("%d ", global_arr[i]);
+    MPI_Barrier(MPI_COMM_WORLD);
+
+    if (rank == ROOT) {
+        printf("The %d-dim Array After Sorting:\t\t", global_n);
+        for (int i = additional; i < global_n+additional; i++)
+            printf("%d\t", global_arr[i]);
+        printf("\n");
+        printf("Elapsed time = %e seconds\n", finish_time-start_time);
+    }
 
     MPI_Finalize();
 
