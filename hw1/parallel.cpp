@@ -12,7 +12,7 @@ void sort(int* local_arr, int local_n, int rank, int num_p);
 
 int main(int argc, char* argv[]) {
 
-    int global_n = 10;
+    int global_n = atoi(argv[1]);
     int* global_arr;
     int* local_arr;
     int rank, num_p, local_n;
