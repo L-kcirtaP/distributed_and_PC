@@ -5,6 +5,7 @@
 #define ROOT 0
 #define SORTED 0
 #define UNSORTED 1
+#define PLACEHOLDER 0
 
 void sort(int* local_arr, int local_n, int rank, int num_p);
 
@@ -42,7 +43,7 @@ int main(int argc, char* argv[]) {
         }
         printf("\n");
         for (int i = global_n; i < global_n+additional; i++)
-            global_arr[i] = 0;
+            global_arr[i] = PLACEHOLDER;
     }
         
     MPI_Scatter(global_arr, local_n, MPI_INT, local_arr, local_n, MPI_INT, ROOT, MPI_COMM_WORLD);
@@ -74,8 +75,6 @@ void sort(int* local_arr, int local_n, int rank, int num_p) {
     int sorted = UNSORTED;         // 0: sorted, 1: unsorted
     int recdata_1, recdata_2;
     MPI_Status status;
-
-    const int sorted_tag = 2;
 
     while (sorted == UNSORTED) {
         local_sorted = SORTED;
