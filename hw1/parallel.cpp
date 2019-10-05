@@ -8,27 +8,39 @@
 
 void sort(int* local_arr, int local_n, int rank, int num_p);
 
-/*-------------------------------------------------------------------*/
+
 int main(int argc, char* argv[]) {
 
-    const int global_n = 50;
-    int global_arr[global_n];
-    int rank, num_p;
+    int global_n = 50;
+    int* global_arr;
+    int* local_arr;
+    int rank, num_p, local_n;
+    int additional = 0;
 
     MPI_Init(&argc, &argv);
     MPI_Comm_rank(MPI_COMM_WORLD, &rank);
     MPI_Comm_size(MPI_COMM_WORLD, &num_p);
+
+    if (global_n % num_p == 0) {
+        local_n = global_n / num_p;
+        global_arr = (int*) malloc(global_n*sizeof(int));
+    } else {
+        additional = num_p - (global_n % num_p);
+        local_n = global_n / num_p + 1;
+        global_arr = (int*) malloc((global_n+additional)*sizeof(int));
+    }
+
+    local_arr = (int*) malloc(local_n*sizeof(int));
 
     srand(2019 + (rank<<2));
 
     if (rank == ROOT) {
         for (int i = 0; i < global_n; i++)
             global_arr[i] = rand() % 10000;
+        for (int i = global_n-1; i < global_n+additional; i++)
+            global_arr[i] = 0;
     }
-    
-    const int local_n = global_n / num_p;
-    int* local_arr = (int*) malloc(local_n*sizeof(int));
-    
+        
     MPI_Scatter(global_arr, local_n, MPI_INT, local_arr, local_n, MPI_INT, ROOT, MPI_COMM_WORLD);
 
     double start_time = MPI_Wtime();
@@ -39,7 +51,7 @@ int main(int argc, char* argv[]) {
 
     if (rank == ROOT)
         // printf("Elapsed time = %e seconds\n", finish_time-start_time);
-        for (int i = 0; i < global_n; i++)
+        for (int i = additional; i < global_n; i++)
             printf("%d ", global_arr[i]);
 
     MPI_Finalize();
@@ -78,11 +90,6 @@ void sort(int* local_arr, int local_n, int rank, int num_p) {
                 local_sorted = UNSORTED;
             }
         }
-
-        // printf("BEFORE: Rank %d: ", rank);
-        // for (int i = 0; i < local_n; i++)
-        //     printf("%d, ", local_arr[i]);
-        // printf("\n");
 
         MPI_Barrier(MPI_COMM_WORLD);        
 
