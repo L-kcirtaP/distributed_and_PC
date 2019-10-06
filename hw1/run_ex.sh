@@ -1,0 +1,16 @@
+mpirun -n 1 ./parallel 100000 >> output.txt
+mpirun -n 2 ./parallel 100000 >> output.txt
+mpirun -n 3 ./parallel 100000 >> output.txt
+mpirun -n 4 ./parallel 100000 >> output.txt
+mpirun -n 5 ./parallel 100000 >> output.txt
+mpirun -n 6 ./parallel 100000 >> output.txt
+mpirun -n 7 ./parallel 100000 >> output.txt
+mpirun -n 8 ./parallel 100000 >> output.txt
+mpirun -n 9 ./parallel 100000 >> output.txt
+mpirun -n 10 ./parallel 100000 >> output.txt
+mpirun -n 11 ./parallel 100000 >> output.txt
+mpirun -n 12 ./parallel 100000 >> output.txt
+mpirun -n 13 ./parallel 100000 >> output.txt
+mpirun -n 14 ./parallel 100000 >> output.txt
+mpirun -n 15 ./parallel 100000 >> output.txt
+mpirun -n 16 ./parallel 100000 >> output.txt
