@@ -51,7 +51,7 @@ int main(int argc, char *argv[]) {
     // for (int i = 0; i < size; i++) {
     //     printf("%8f ", array[i]);
     // }
-    printf("\nTotal elapsed time: %8fs\n", ((double)end-(double)start)/CLOCKS_PER_SEC);
+    printf("\n%d Elements Total elapsed time: %8fs\n", size, ((double)end-(double)start)/CLOCKS_PER_SEC);
 
     return 0;
 }
