@@ -36,6 +36,10 @@ int main(int argc, char* argv[]) {
     srand(2019 + (rank<<2));
 
     if (rank == ROOT) {
+        printf("Name: Liu Yang\n");
+        printf("Student ID: 116010151\n");
+        printf("Assignment 1, Odd-Even Transposition Sort, MPI Implementation\n");
+
         // printf("The %d-dim Array Before Sorting:\t", global_n);
         for (int i = 0; i < global_n; i++) {
             global_arr[i] = rand() % 10000;
@@ -61,7 +65,7 @@ int main(int argc, char* argv[]) {
         // for (int i = additional; i < global_n+additional; i++)
         //     printf("%d\t", global_arr[i]);
         // printf("\n");
-        printf("%d Processes %d Elements: Elapsed Time = %e seconds\n", num_p, global_n,finish_time-start_time);
+        printf("Elapsed Time = %e seconds\n", finish_time-start_time);
     }
 
     MPI_Finalize();
