@@ -6,4 +6,4 @@
 
 timeout 60 mpiexec -n 2 -f /home/mpi_config /code/116010151/mpi 100 >> /code/116010151/output_2.txt
 timeout 60 mpiexec -n 2 -f /home/mpi_config /code/116010151/mpi 10000 >> /code/116010151/output_2.txt
-timeout 60 mpiexec -n 2 -f /home/mpi_config /code/116010151/mpi 500000 >> /code/116010151/output_2.txt
+timeout 60 mpiexec -n 2 -f /home/mpi_config /code/116010151/mpi 100000 >> /code/116010151/output_2.txt
