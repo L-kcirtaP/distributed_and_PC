@@ -11,7 +11,7 @@ int main (int argc, char* argv[]){
     Display         *display;
     GC              gc;   //this is a graphic content, it could be a pixel color
     unsigned long            valuemask = 0;
-      XGCValues       values; //value of the graphics content
+    XGCValues       values; //value of the graphics content
     XSizeHints      size_hints;
     Pixmap          bitmap;
     XSetWindowAttributes attr[1];
