@@ -1,0 +1,5 @@
+# split
+split -b 40m pi-0001.txt
+
+# merge
+cat xaa xab xac > pi-0001.txt
