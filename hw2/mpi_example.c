@@ -12,7 +12,7 @@
 #include <stdint.h>
 #include <string.h>
 #include <math.h>
-#include <mpi.h>
+#include <mpich/mpi.h>
 #define		X_RESN	1024       /* x resolution */
 #define		Y_RESN	1024      /* y resolution */
 #define     M_MAX   (1 << 24)       /* Max iterations for Mandelbrot */
@@ -121,7 +121,7 @@ void worker()
         }
         MPI_Send(&colors[0], X_RESN, MPI_INT, 0, RESULT_TAG,MPI_COMM_WORLD);
         MPI_Recv(&row , 1 , MPI_INT, 0, MPI_ANY_TAG, MPI_COMM_WORLD, &status);
-      
+
     }
 }
 
@@ -229,14 +229,13 @@ int main (int argc, char **argv)
       	 
    /* Mandlebrot variables */
     int k, count, row;
-    
 
     count = 0;
     row = 0;
     for(k = 1; k < size; k++)
     {
         MPI_Send(&row, 1, MPI_INT, k, DATA_TAG,MPI_COMM_WORLD);
-        count++;
+        // count++;
         row++;
     }
     int * colors = (int *) malloc(sizeof(int) * (X_RESN+1));
@@ -244,18 +243,18 @@ int main (int argc, char **argv)
     do
     {
         MPI_Recv(&colors[0] , X_RESN , MPI_INT, MPI_ANY_SOURCE, RESULT_TAG, MPI_COMM_WORLD, &status);
-        count--;
-        if(row < X_RESN)
-        {
-            MPI_Send(&row, 1, MPI_INT, status.MPI_SOURCE, DATA_TAG, MPI_COMM_WORLD);
-            row++;
-            count++;
-        }
-        else
-            MPI_Send(&row, 1, MPI_INT, status.MPI_SOURCE, TERM_TAG, MPI_COMM_WORLD);
+        // count--;
+        // if(row < X_RESN)
+        // {
+        MPI_Send(&row, 1, MPI_INT, status.MPI_SOURCE, DATA_TAG, MPI_COMM_WORLD);
+        row++;
+            // count++;
+        // }
+        // else
+            // MPI_Send(&row, 1, MPI_INT, status.MPI_SOURCE, TERM_TAG, MPI_COMM_WORLD);
         draw_row(&session,colors[0],&colors[1]);
-    }
-    while(count > 0);
+    } while(count > 0);
+    
 	printf("\n");
 	XFlush (display);
 	sleep (10);

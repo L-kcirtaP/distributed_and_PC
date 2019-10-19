@@ -1,4 +1,4 @@
-#include "mpi.h"
+#include "mpich/mpi.h"
 #include <cstdio>
 #include <cstdlib>
 #include <ctime>
