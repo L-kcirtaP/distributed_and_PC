@@ -160,21 +160,21 @@ int main (int argc, char* argv[]){
     double finish_time = MPI_Wtime();
 
     if (rank == ROOT) {
-        printf("Name: Liu Yang\nStudent ID: 116010151\nAssignment 2, Mandelbrot Set, MPI Implementation\n");
+        // printf("Name: Liu Yang\nStudent ID: 116010151\nAssignment 2, Mandelbrot Set, MPI Implementation\n");
         printf("%d process %d*%d resolution RUN TIME is %lf\n", num_p, X_RESN, Y_RESN, finish_time-start_time); 
 
-        for (int i = 0; i < X_RESN; i++) {
-            for (int j = 0; j < Y_RESN; j++){
-                if (global_result[j*X_RESN + i] == 1) {
-                    XDrawPoint(display, win, gc, j, i);
-                    usleep(1);
-                }
-            }
-        }
-        XFlush(display);
-        usleep(250000);
-        printf("finish running\n");
-        sleep(10);
+        // for (int i = 0; i < X_RESN; i++) {
+        //     for (int j = 0; j < Y_RESN; j++){
+        //         if (global_result[j*X_RESN + i] == 1) {
+        //             XDrawPoint(display, win, gc, j, i);
+        //             usleep(1);
+        //         }
+        //     }
+        // }
+        // XFlush(display);
+        // usleep(250000);
+        // printf("finish running\n");
+        // sleep(10);
     }
 
     MPI_Finalize();

@@ -167,21 +167,21 @@ int main (int argc, char* argv[]) {
 
     run_time = (end_time.tv_sec - start_time.tv_sec ) + (double)(end_time.tv_usec - start_time.tv_usec)/1000000;  
 
-    printf("Name: Liu Yang\nStudent ID: 116010151\nAssignment 2, Mandelbrot Set, Pthread Implementation\n");
+    // printf("Name: Liu Yang\nStudent ID: 116010151\nAssignment 2, Mandelbrot Set, Pthread Implementation\n");
     printf("%d processes %d*%d resolution RUN TIME is %lf\n", NUM_THREADS, X_RESN, Y_RESN, run_time); 
 
-    for (int i = 0; i < X_RESN; i++) {
-        for (int j = 0; j < Y_RESN; j++){
-            if (results[j*X_RESN + i] == 1) {
-                XDrawPoint(display, win, gc, j, i);
-                usleep(1);
-            }
-        }
-    }
+    // for (int i = 0; i < X_RESN; i++) {
+    //     for (int j = 0; j < Y_RESN; j++){
+    //         if (results[j*X_RESN + i] == 1) {
+    //             XDrawPoint(display, win, gc, j, i);
+    //             usleep(1);
+    //         }
+    //     }
+    // }
 
-    XFlush(display);
-    usleep(250000);
-    sleep(10);
+    // XFlush(display);
+    // usleep(250000);
+    // sleep(10);
 
     return 0;
 }

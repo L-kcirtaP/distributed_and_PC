@@ -127,24 +127,22 @@ int main (int argc, char* argv[]){
     gettimeofday( &timeEnd, NULL ); 
     runTime = (timeEnd.tv_sec - timeStart.tv_sec ) + (double)(timeEnd.tv_usec -timeStart.tv_usec)/1000000;  
 
-    printf("Name: Liu Yang\nStudent ID: 116010151\nAssignment 2, Mandelbrot Set, Sequential Implementation\n");
+    // printf("Name: Liu Yang\nStudent ID: 116010151\nAssignment 2, Mandelbrot Set, Sequential Implementation\n");
     printf("Sequential %d*%d resolution RUN TIME is %lf\n", X_RESN, Y_RESN, runTime); 
 
     
-    for (i=0;i<X_RESN;i++){
-    for (int j=0;j<Y_RESN;j++){
-      if(output[i*X_RESN+j]==1){
-        XDrawPoint (display, win, gc, j, i);
-        usleep(1);
-        //XDrawPoint cannot draw too fast, otherwise the image cannot be drawn
-        //normally you could try to not use the usleep(1), it only black images are shown, try to use this
-      }
-    }
-    }
+    // for (i=0;i<X_RESN;i++){
+    //   for (int j=0;j<Y_RESN;j++){
+    //     if(output[i*X_RESN+j]==1){
+    //       XDrawPoint (display, win, gc, j, i);
+    //       usleep(1);
+    //     }
+    //   }
+    // }
 
     //usleep(250000);
-    XFlush (display);
-    cout<<"finish running"<<endl;
-    sleep(10);
+    // XFlush (display);
+    // cout<<"finish running"<<endl;
+    // sleep(10);
     return 0;
 }
