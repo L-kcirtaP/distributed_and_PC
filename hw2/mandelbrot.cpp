@@ -131,6 +131,7 @@ int main (int argc, char* argv[]){
     for (i=0;i<X_RESN;i++){
     for (int j=0;j<Y_RESN;j++){
       if(output[i*X_RESN+j]==1){
+        printf("DRAW x = %d y = %d\n", j, i);
         XDrawPoint (display, win, gc, j, i);
         usleep(1);
         //XDrawPoint cannot draw too fast, otherwise the image cannot be drawn

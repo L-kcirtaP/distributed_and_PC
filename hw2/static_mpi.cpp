@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <cstdlib>
 #include <math.h>
-#include <mpich/mpi.h>
+#include <mpi.h>
 #include <time.h>
 #include <X11/Xlib.h>
 #include <X11/Xutil.h>
@@ -9,8 +9,6 @@
 #include <typeinfo>
 
 #define ROOT 0
-#define X_RESN 200
-#define Y_RESN 200
 #define MAX_ITER 100
 #define MAX_LENGTH 12
 
@@ -19,20 +17,25 @@ typedef struct complextype {
     float real, imag;
 } Compl;
 
-typedef enum { DATA_TAG, TERM_TAG, RESULT_TAG } Tags;
 
 int main (int argc, char* argv[]){
 
-    int rank, num_p;
+    int X_RESN = atoi(argv[1]);
+    int Y_RESN = atoi(argv[1]);
+
+    int rank, num_p, *global_result;
     struct timeval timeStart, timeEnd, timeSystemStart;
     double run_time = 0, systemRunTime;
 
-    int* output = (int*) malloc(sizeof(int) * (X_RESN*Y_RESN));
-
     MPI_Init(&argc, &argv);
-    MPI_Comm_rank(MPI_COMM_WORLD, &rank);
     MPI_Comm_size(MPI_COMM_WORLD, &num_p);
+    MPI_Comm_rank(MPI_COMM_WORLD, &rank);
 
+    int local_row_num = Y_RESN / num_p;
+    if (Y_RESN % num_p) local_row_num++;
+    int local_result_sz = local_row_num * X_RESN;
+
+    int* local_result = (int*) malloc(sizeof(int) * local_result_sz);
 
     Window          win;       
     char            *window_name = "test", *display_name = NULL;                     /* initialization for a window */
@@ -107,105 +110,62 @@ int main (int argc, char* argv[]){
         XFlush (display);
 
         XColor color;
-        color.red=10000;    //range from 0~65535
-        color.green=10000;
-        color.blue=10000;
+        color.red=0;    //range from 0~65535
+        color.green=0;
+        color.blue=0;
 
-        Status rc1=XAllocColor(display,DefaultColormap(display, screen),&color);
+        Status rc1 = XAllocColor(display, DefaultColormap(display, screen), &color);
         //set the color and attribute of the graphics content
         XSetForeground (display, gc, color.pixel);
         XSetBackground (display, gc, BlackPixel (display, screen));
         XSetLineAttributes (display, gc, 1, LineSolid, CapRound, JoinRound);
 
-        Compl z, c;
-        int i, j, process_count, row, working_p;
+    }
 
-        gettimeofday(&timeStart, NULL);
+    // Computation part
+    Compl z, c;
+    int row, loop_count;
+    double lengthsq, temp;
 
-        row = 0;
-        working_p = 0;
+    double start_time = MPI_Wtime();
 
-        for (process_count = 1; process_count < num_p; process_count++) {
-            MPI_Send(&row, 1, MPI_INT, process_count, DATA_TAG, MPI_COMM_WORLD);
-            // printf("Sent row %d task to process %d.\n", row, process_count);
-            row++;
-            working_p++;
-        }
+    for (int i = 0; i < local_row_num; i++) {
+        row = rank * local_row_num + i;
+        for (int col = 0; col < X_RESN; col++) {
+            z.real = z.imag = 0.0;
+            c.real = ((float) row - Y_RESN/2)/(Y_RESN/4);                //scale factors for 800 x 800 window 
+            c.imag = ((float) col - X_RESN/2)/(X_RESN/4);
+            loop_count = 0;
 
-        MPI_Status status;
+            do  {                                             // iterate for pixel color
+                temp = z.real*z.real - z.imag*z.imag + c.real;
+                z.imag = 2.0*z.real*z.imag + c.imag;
+                z.real = temp;
 
-        while (working_p > 0) {
-            MPI_Recv(&output[row*X_RESN], X_RESN, MPI_INT, MPI_ANY_SOURCE, RESULT_TAG, MPI_COMM_WORLD, &status);
+                lengthsq = z.real*z.real + z.imag*z.imag;
+                loop_count++;
+            } while (lengthsq < MAX_LENGTH && loop_count < MAX_ITER); //lengthsq and loop_count are the threshold
 
-            // for (int i = 0; i < X_RESN; i++) {
-            //     if (output[row*X_RESN+i] == 1){
-            //         printf("row %d col %d\n", row, i);
-            //     }
-            // }
-
-            row++;
-            working_p--;
-            
-            if (row < Y_RESN) {
-                MPI_Send(&row, 1, MPI_INT, status.MPI_SOURCE, DATA_TAG, MPI_COMM_WORLD);
-                working_p++;
-            } else {
-                MPI_Send(&row, 1, MPI_INT, status.MPI_SOURCE, TERM_TAG, MPI_COMM_WORLD);
+            if (loop_count >= MAX_ITER) {
+                // printf("(%d, %d)\n", row, col);
+                local_result[i*X_RESN + col] = 1;
             }
-        }
-
-    } else {
-        MPI_Status status;
-        int row, loop_count;
-        double temp, lengthsq;
-        Compl c, z;
-        
-        MPI_Recv(&row, 1, MPI_INT, ROOT, MPI_ANY_TAG, MPI_COMM_WORLD, &status);
-        // printf("Process %d receives from root\n", rank);
-
-        while (status.MPI_TAG == DATA_TAG){
-            c.imag = ((float)row - Y_RESN/2)/(Y_RESN/4);
-
-            // printf("Process %d is computing row %d...\n", rank, row);
-
-            for (int col = 0; col < X_RESN; col++) {
-                z.real = 0;
-                z.imag = 0;
-                loop_count = 0;
-
-                c.real = ((float)col - Y_RESN/2)/(Y_RESN/4);
-                do {
-                    temp = z.real*z.real - z.imag*z.imag + c.real;
-                    z.imag = 2*z.real*z.real + c.imag;
-                    z.real = temp;
-
-                    lengthsq = z.real*z.real + z.imag*z.imag;
-                    loop_count++;
-                } while (lengthsq < MAX_LENGTH && loop_count < MAX_ITER);
-                
-                if (loop_count >= MAX_ITER) {
-                    printf("(%d, %d)\n", row, col);
-                    *(&output[row*X_RESN] + col) = 1;
-                    // printf("(%d, %d): %d\n", row, col, output[row*X_RESN+col]);
-                }
-            }
-
-            MPI_Send(&output[row*X_RESN], X_RESN, MPI_INT, ROOT, RESULT_TAG, MPI_COMM_WORLD);
-            MPI_Recv(&row, 1, MPI_INT, ROOT, MPI_ANY_TAG, MPI_COMM_WORLD, &status);
         }
     }
 
+    if (rank == ROOT) global_result = (int*) malloc(sizeof(int) * local_result_sz * num_p);
+
+    MPI_Gather(local_result, local_result_sz, MPI_INT, global_result, local_result_sz, MPI_INT, ROOT, MPI_COMM_WORLD);
     MPI_Barrier(MPI_COMM_WORLD);
 
+    double finish_time = MPI_Wtime();
+
     if (rank == ROOT) {
-        gettimeofday(&timeEnd, NULL); 
-        run_time = (timeEnd.tv_sec - timeStart.tv_sec ) + (double)(timeEnd.tv_usec - timeStart.tv_usec) / 1000000;  
-        printf("Running time: %lf\n", run_time); 
-        
+        printf("%d Processes %d size Elapsed Time = %e seconds\n", num_p, X_RESN, finish_time-start_time);
+
         for (int i = 0; i < X_RESN; i++) {
             for (int j = 0; j < Y_RESN; j++){
-                if (output[j*X_RESN + i] == 1) {
-                    // printf("DRAW x = %d y = %d\n", j, i);
+                if (global_result[j*X_RESN + i] == 1) {
                     XDrawPoint(display, win, gc, j, i);
                     usleep(1);
                 }
