@@ -39,8 +39,8 @@ int main (int argc, char* argv[]){
       display_height = DisplayHeight (display, screen);
 
       /* set window size */
-    int X_RESN=200;
-    int Y_RESN=200;
+    int X_RESN = atoi(argv[1]);
+    int Y_RESN = atoi(argv[1]);
     width = X_RESN;
     height = Y_RESN;
 
@@ -126,12 +126,14 @@ int main (int argc, char* argv[]){
     }
     gettimeofday( &timeEnd, NULL ); 
     runTime = (timeEnd.tv_sec - timeStart.tv_sec ) + (double)(timeEnd.tv_usec -timeStart.tv_usec)/1000000;  
-    printf("runTime is %lf\n", runTime); 
+
+    printf("Name: Liu Yang\nStudent ID: 116010151\nAssignment 2, Mandelbrot Set, Sequential Implementation\n");
+    printf("Sequential %d*%d resolution RUN TIME is %lf\n", X_RESN, Y_RESN, runTime); 
+
     
     for (i=0;i<X_RESN;i++){
     for (int j=0;j<Y_RESN;j++){
       if(output[i*X_RESN+j]==1){
-        printf("DRAW x = %d y = %d\n", j, i);
         XDrawPoint (display, win, gc, j, i);
         usleep(1);
         //XDrawPoint cannot draw too fast, otherwise the image cannot be drawn

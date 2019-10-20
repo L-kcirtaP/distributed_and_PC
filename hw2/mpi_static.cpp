@@ -6,7 +6,6 @@
 #include <X11/Xlib.h>
 #include <X11/Xutil.h>
 #include <X11/Xos.h>
-#include <typeinfo>
 
 #define ROOT 0
 #define MAX_ITER 100
@@ -161,7 +160,8 @@ int main (int argc, char* argv[]){
     double finish_time = MPI_Wtime();
 
     if (rank == ROOT) {
-        printf("%d Processes %d size Elapsed Time = %e seconds\n", num_p, X_RESN, finish_time-start_time);
+        printf("Name: Liu Yang\nStudent ID: 116010151\nAssignment 2, Mandelbrot Set, MPI Implementation\n");
+        printf("%d process %d*%d resolution RUN TIME is %lf\n", num_p, X_RESN, Y_RESN, finish_time-start_time); 
 
         for (int i = 0; i < X_RESN; i++) {
             for (int j = 0; j < Y_RESN; j++){
