@@ -1,0 +1,9 @@
+Sequential 100*100 resolution RUN TIME is 0.003439
+Sequential 100*100 resolution RUN TIME is 0.003239
+Sequential 100*100 resolution RUN TIME is 0.003550
+Sequential 1000*1000 resolution RUN TIME is 0.222199
+Sequential 1000*1000 resolution RUN TIME is 0.225575
+Sequential 1000*1000 resolution RUN TIME is 0.218968
+Sequential 10000*10000 resolution RUN TIME is 15.307257
+Sequential 10000*10000 resolution RUN TIME is 14.941304
+Sequential 10000*10000 resolution RUN TIME is 15.326764
