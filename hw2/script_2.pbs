@@ -3,6 +3,8 @@
 #PBS -q batch
 #PBS -m abe
 #PBS -V
+#PBS -e /home/116010151/error.txt
+#PBS -o /home/116010151/output.txt
 
 timeout 60 mpiexec -n 2 -f /home/mpi_config /code/116010151/mpi_static 100 -w 6400 -h 6400 >> mpi_output.txt
 timeout 60 mpiexec -n 2 -f /home/mpi_config /code/116010151/mpi_static 100 -w 6400 -h 6400 >> mpi_output.txt
