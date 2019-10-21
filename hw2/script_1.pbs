@@ -13,9 +13,6 @@ timeout 60 mpiexec -n 1 -f /home/mpi_config /code/116010151/mpi_static 1000 -w 6
 timeout 60 mpiexec -n 1 -f /home/mpi_config /code/116010151/mpi_static 10000 -w 6400 -h 6400  >> /code/116010151/mpi_output.txt
 timeout 60 mpiexec -n 1 -f /home/mpi_config /code/116010151/mpi_static 10000 -w 6400 -h 6400  >> /code/116010151/mpi_output.txt
 timeout 60 mpiexec -n 1 -f /home/mpi_config /code/116010151/mpi_static 10000 -w 6400 -h 6400  >> /code/116010151/mpi_output.txt
-timeout 60 mpiexec -n 1 -f /home/mpi_config /code/116010151/mpi_static 20000 -w 6400 -h 6400  >> /code/116010151/mpi_output.txt
-timeout 60 mpiexec -n 1 -f /home/mpi_config /code/116010151/mpi_static 20000 -w 6400 -h 6400  >> /code/116010151/mpi_output.txt
-timeout 60 mpiexec -n 1 -f /home/mpi_config /code/116010151/mpi_static 20000 -w 6400 -h 6400  >> /code/116010151/mpi_output.txt
 
 timeout 60 /code/116010151/pthread 1 100 -w 6400 -h 6400 >> /code/116010151/pthread_output.txt
 timeout 60 /code/116010151/pthread 1 100 -w 6400 -h 6400 >> /code/116010151/pthread_output.txt
@@ -26,9 +23,6 @@ timeout 60 /code/116010151/pthread 1 1000 -w 6400 -h 6400 >> /code/116010151/pth
 timeout 60 /code/116010151/pthread 1 10000 -w 6400 -h 6400 >> /code/116010151/pthread_output.txt
 timeout 60 /code/116010151/pthread 1 10000 -w 6400 -h 6400 >> /code/116010151/pthread_output.txt
 timeout 60 /code/116010151/pthread 1 10000 -w 6400 -h 6400 >> /code/116010151/pthread_output.txt
-timeout 60 /code/116010151/pthread 1 20000 -w 6400 -h 6400 >> /code/116010151/pthread_output.txt
-timeout 60 /code/116010151/pthread 1 20000 -w 6400 -h 6400 >> /code/116010151/pthread_output.txt
-timeout 60 /code/116010151/pthread 1 20000 -w 6400 -h 6400 >> /code/116010151/pthread_output.txt
 
 timeout 60 /code/116010151/sequential 100 -w 6400 -h 6400 >>/code/116010151/sequential_output.txt
 timeout 60 /code/116010151/sequential 100 -w 6400 -h 6400 >> /code/116010151/sequential_output.txt

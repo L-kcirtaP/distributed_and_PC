@@ -1,12 +1,3 @@
-2 processes 100*100 resolution RUN TIME is 0.002725
-2 processes 100*100 resolution RUN TIME is 0.001954
-2 processes 100*100 resolution RUN TIME is 0.002811
-2 processes 1000*1000 resolution RUN TIME is 0.163046
-2 processes 1000*1000 resolution RUN TIME is 0.164793
-2 processes 1000*1000 resolution RUN TIME is 0.153752
-2 processes 10000*10000 resolution RUN TIME is 9.663865
-2 processes 10000*10000 resolution RUN TIME is 9.837766
-2 processes 10000*10000 resolution RUN TIME is 10.223678
 1 processes 100*100 resolution RUN TIME is 0.004101
 1 processes 100*100 resolution RUN TIME is 0.004165
 1 processes 100*100 resolution RUN TIME is 0.003788
@@ -16,6 +7,7 @@
 1 processes 10000*10000 resolution RUN TIME is 14.654760
 1 processes 10000*10000 resolution RUN TIME is 14.034690
 1 processes 10000*10000 resolution RUN TIME is 14.970340
+
 2 processes 100*100 resolution RUN TIME is 0.001494
 2 processes 100*100 resolution RUN TIME is 0.002589
 2 processes 100*100 resolution RUN TIME is 0.001522
@@ -28,6 +20,7 @@
 2 processes 10000*10000 resolution RUN TIME is 10.177261
 2 processes 20000*20000 resolution RUN TIME is 42.039018
 2 processes 20000*20000 resolution RUN TIME is 41.670797
+
 3 processes 100*100 resolution RUN TIME is 0.001276
 3 processes 100*100 resolution RUN TIME is 0.001460
 3 processes 100*100 resolution RUN TIME is 0.002589
@@ -39,6 +32,7 @@
 3 processes 10000*10000 resolution RUN TIME is 9.808866
 3 processes 20000*20000 resolution RUN TIME is 42.309308
 3 processes 20000*20000 resolution RUN TIME is 42.650728
+
 4 processes 100*100 resolution RUN TIME is 0.002253
 4 processes 100*100 resolution RUN TIME is 0.002224
 4 processes 100*100 resolution RUN TIME is 0.002276
