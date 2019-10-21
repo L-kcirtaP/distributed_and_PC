@@ -1,0 +1,7 @@
+Elapsed time = 1.084337e-01 seconds
+Elapsed time = 4.955393e+00 seconds
+14 Processes 100 Elements: Elapsed Time = 2.557433e-01 seconds
+14 Processes 10000 Elements: Elapsed Time = 8.975578e+00 seconds
+14 Processes 100 Elements: Elapsed Time = 7.319832e-02 seconds
+14 Processes 10000 Elements: Elapsed Time = 5.008847e+00 seconds
+14 Processes 100000 Elements: Elapsed Time = 4.970460e+01 seconds

@@ -1,0 +1,56 @@
+
+
+
+
+Elapsed Time: 4.396815s
+
+Elapsed Time: 4.401853s
+
+Elapsed Time: 4.404587s
+
+Elapsed Time: 4.395856s
+
+Elapsed Time: 4.410475s
+
+Elapsed Time: 0.000099s
+
+Elapsed Time: 0.000082s
+
+Elapsed Time: 0.000098s
+
+Elapsed Time: 0.000096s
+
+Elapsed Time: 0.000124s
+
+
+Elapsed Time: 0.007199s
+
+Elapsed Time: 0.010102s
+
+Elapsed Time: 0.007386s
+
+Elapsed Time: 0.007506s
+
+Elapsed Time: 0.007116s
+
+
+Elapsed Time: 0.671130s
+
+Elapsed Time: 0.672462s
+
+Elapsed Time: 0.673250s
+
+Elapsed Time: 0.674675s
+
+Elapsed Time: 0.667253s
+
+
+Elapsed Time: 18.223743s
+
+Elapsed Time: 18.200413s
+
+Elapsed Time: 18.174854s
+
+Elapsed Time: 18.509571s
+
+Elapsed Time: 18.938790s

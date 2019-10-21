@@ -1,0 +1,25 @@
+#!/bin/bash
+#PBS -l nodes=1:ppn=5,mem=1g,walltime=00:02:00
+#PBS -q batch
+#PBS -m abe
+#PBS -V
+
+timeout 60 mpiexec -n 6 -f /home/mpi_config /code/116010151/mpi_static 100 -w 6400 -h 6400 >> mpi_output.txt
+timeout 60 mpiexec -n 6 -f /home/mpi_config /code/116010151/mpi_static 100 -w 6400 -h 6400 >> mpi_output.txt
+timeout 60 mpiexec -n 6 -f /home/mpi_config /code/116010151/mpi_static 100 -w 6400 -h 6400 >> mpi_output.txt
+timeout 60 mpiexec -n 6 -f /home/mpi_config /code/116010151/mpi_static 1000 -w 6400 -h 6400 >> mpi_output.txt
+timeout 60 mpiexec -n 6 -f /home/mpi_config /code/116010151/mpi_static 1000 -w 6400 -h 6400 >> mpi_output.txt
+timeout 60 mpiexec -n 6 -f /home/mpi_config /code/116010151/mpi_static 1000 -w 6400 -h 6400 >> mpi_output.txt
+timeout 60 mpiexec -n 6 -f /home/mpi_config /code/116010151/mpi_static 10000 -w 6400 -h 6400 >> mpi_output.txt
+timeout 60 mpiexec -n 6 -f /home/mpi_config /code/116010151/mpi_static 10000 -w 6400 -h 6400 >> mpi_output.txt
+timeout 60 mpiexec -n 6 -f /home/mpi_config /code/116010151/mpi_static 10000 -w 6400 -h 6400 >> mpi_output.txt
+
+timeout 60 /code/116010151/pthread 6 100 -w 6400 -h 6400 >> pthread_output.txt
+timeout 60 /code/116010151/pthread 6 100 -w 6400 -h 6400 >> pthread_output.txt
+timeout 60 /code/116010151/pthread 6 100 -w 6400 -h 6400 >> pthread_output.txt
+timeout 60 /code/116010151/pthread 6 1000 -w 6400 -h 6400 >> pthread_output.txt
+timeout 60 /code/116010151/pthread 6 1000 -w 6400 -h 6400 >> pthread_output.txt
+timeout 60 /code/116010151/pthread 6 1000 -w 6400 -h 6400 >> pthread_output.txt
+timeout 60 /code/116010151/pthread 6 10000 -w 6400 -h 6400 >> pthread_output.txt
+timeout 60 /code/116010151/pthread 6 10000 -w 6400 -h 6400 >> pthread_output.txt
+timeout 60 /code/116010151/pthread 6 10000 -w 6400 -h 6400 >> pthread_output.txt

@@ -12,11 +12,11 @@ void sort(int* local_arr, int local_n, int rank, int num_p);
 
 int main(int argc, char* argv[]) {
 
-    int global_n = atoi(argv[1]);
-    int* global_arr;
-    int* local_arr;
-    int rank, num_p, local_n;
-    int additional = 0;
+    int global_n = atoi(argv[1]);       /* array size */
+    int* global_arr;                    /* global array to be sorted */
+    int* local_arr;                     /* local array of each process */
+    int rank, num_p, local_n;           /* rank number, number of processes, local array size */
+    int additional = 0;                 /* reminder of local_n dividing global_n */
 
     MPI_Init(&argc, &argv);
     MPI_Comm_rank(MPI_COMM_WORLD, &rank);
@@ -35,33 +35,41 @@ int main(int argc, char* argv[]) {
 
     srand(2019 + (rank<<2));
 
+    // initialize the array randomly 
     if (rank == ROOT) {
-        // printf("The %d-dim Array Before Sorting:\t", global_n);
+        printf("Name: Liu Yang\n");
+        printf("Student ID: 116010151\n");
+        printf("Assignment 1, Odd-Even Transposition Sort, MPI Implementation\n");
+
+        printf("The %d-dim Array Before Sorting:\t", global_n);
         for (int i = 0; i < global_n; i++) {
-            global_arr[i] = rand() % 10000;
-            // printf("%d\t", global_arr[i]);
+            global_arr[i] = rand() % 100000;
+            printf("%d\t", global_arr[i]);
         }
-        // printf("\n");
+        printf("\n");
         for (int i = global_n; i < global_n+additional; i++)
             global_arr[i] = PLACEHOLDER;
     }
-        
+
+    // scatter global array to different processes   
     MPI_Scatter(global_arr, local_n, MPI_INT, local_arr, local_n, MPI_INT, ROOT, MPI_COMM_WORLD);
 
     double start_time = MPI_Wtime();
     sort(local_arr, local_n, rank, num_p);
     double finish_time = MPI_Wtime();
 
+    // gather to form the sorted array
     MPI_Gather(local_arr, local_n, MPI_INT, global_arr, local_n, MPI_INT, ROOT, MPI_COMM_WORLD);
 
     MPI_Barrier(MPI_COMM_WORLD);
 
+    // print output
     if (rank == ROOT) {
-        // printf("The %d-dim Array After Sorting:\t\t", global_n);
-        // for (int i = additional; i < global_n+additional; i++)
-        //     printf("%d\t", global_arr[i]);
-        // printf("\n");
-        printf("%d Processes %d Elements: Elapsed Time = %e seconds\n", num_p, global_n,finish_time-start_time);
+        printf("The %d-dim Array After Sorting:\t\t", global_n);
+        for (int i = additional; i < global_n+additional; i++)
+            printf("%d\t", global_arr[i]);
+        printf("\n");
+        printf("%d Processes %d Elements Elapsed Time = %e seconds\n", num_p, global_n, finish_time-start_time);
     }
 
     MPI_Finalize();
@@ -69,11 +77,17 @@ int main(int argc, char* argv[]) {
     return 0;
 }
 
-
+/**
+ * Method: sort
+ * -------------
+ * Description: the core parallel odd-even transposition sorting
+ * Args: local_arr, local_n, rank, num_p
+ * Return: void
+ */
 void sort(int* local_arr, int local_n, int rank, int num_p) {
-    int local_sorted = UNSORTED;   // 0: sorted, 1: unsorted
-    int sorted = UNSORTED;         // 0: sorted, 1: unsorted
-    int recdata_1, recdata_2;
+    int local_sorted = UNSORTED;        /* whether local array is sorted */
+    int sorted = UNSORTED;              /* whether global array is sorted */
+    int recdata_1, recdata_2;           /* receiving buffers */
     MPI_Status status;
 
     while (sorted == UNSORTED) {
@@ -101,38 +115,36 @@ void sort(int* local_arr, int local_n, int rank, int num_p) {
 
         MPI_Barrier(MPI_COMM_WORLD);        
 
+        // Boundary Check
+        // sends boundary element to the next process and receives the response
         if (rank < num_p-1) {
             MPI_Send(&local_arr[local_n-1], 1, MPI_INT, rank+1, 1, MPI_COMM_WORLD);
-            // printf("Process %d sends data to next rank!\n", rank);
+
             MPI_Recv(&recdata_1, 1, MPI_INT, rank+1, 1, MPI_COMM_WORLD, &status);
-            // printf("RECEIVE DATA %d!!!\n", recdata_1);
+            // if swapping needs to be performed
             if (recdata_1 >= 0) {
-                // printf("Process %d receives data from next rank!\n", rank);
                 local_arr[local_n-1] = recdata_1;
                 local_sorted = UNSORTED;
             }
         }
 
+        // receives boundary element from the previous process and send back response
         if (rank > 0) {
             MPI_Recv(&recdata_2, 1, MPI_INT, rank-1, 1, MPI_COMM_WORLD, &status);
-            // printf("Compare! Process %d receives data from previous rank!\n", rank);
+
             int temp;
+            // perform swapping
             if (recdata_2 > local_arr[0]) {
                 temp = local_arr[0];
                 local_arr[0] = recdata_2;
                 MPI_Send(&temp, 1, MPI_INT, rank-1, 1, MPI_COMM_WORLD);
-                // printf("Swapping! Process %d send data to previous rank!\n", rank);
             } else {
-                temp = -1;
+                temp = -1;          /* -1 means no swapping is performed */
                 MPI_Send(&temp, 1, MPI_INT, rank-1, 1, MPI_COMM_WORLD);
             }
         }
-
-        // printf("AFTER: Rank %d: ", rank);
-        // for (int i = 0; i < local_n; i++)
-        //     printf("%d, ", local_arr[i]);
-        // printf("\n");
-
+        
+        // check if the global array is sorted
         MPI_Allreduce(&local_sorted, &sorted, 1, MPI_INT, MPI_MAX, MPI_COMM_WORLD);
     }
 
