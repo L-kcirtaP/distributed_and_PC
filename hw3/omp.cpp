@@ -44,51 +44,6 @@ Body updatePosition(Body body, double duration) {
     return body;
 }
 
-// Body collide_border(Body body, int width, int height) {
-//     if (body.pos_y+body.diameter/2 >= height or body.pos_y-body.diameter/2 <= 0) {
-//         body.velocity_y = -body.velocity_y;
-//     }
-//     if (body.pos_x+body.diameter/2 >= width or body.pos_x-body.diameter/2 <= 0) {
-//         body.velocity_x = -body.velocity_x;
-//     }
-//     return body;
-// }
-
-// bool collide_body(Body b_1, Body b_2) {
-//     double dx = b_1.pos_x - b_2.pos_x;
-//     double dy = b_1.pos_y - b_2.pos_y;
-//     double dist = sqrt(pow(dx, 2) + pow(dy, 2));
-//     if (2*dist <= b_1.diameter + b_2.diameter) {
-//         return true;
-//     } else {
-//         return false;
-//     }
-// }
-
-// Body collide(Body b_1, Body b_2) {
-//     double dx = b_1.pos_x - b_2.pos_x;
-//     double dy = b_1.pos_y - b_2.pos_y;
-//     double dist = sqrt(pow(dx, 2) + pow(dy, 2));
-//     // 球1在球心连线方向上的速度分量
-//     double v_radius_1 = (b_1.velocity_x*dx + b_1.velocity_y*dy) / dist;
-//     // 球1在垂直于球心连线方向上的速度分量
-//     double v_tangent_1 = sqrt(pow(b_1.velocity_x, 2) + pow(b_1.velocity_x, 2) - pow(v_radius_1, 2));                        // 球1在球心连线方向上的速度分量
-//     // 球2在球心连线方向上的速度分量
-//     double v_radius_2 = -(b_2.velocity_x*dx + b_2.velocity_y*dy) / dist;
-
-//     // 碰撞后，球1在球心连线方向上的新速度分量
-//     v_radius_1 = (v_radius_1*(b_1.mass-b_2.mass) + 2*b_2.mass*v_radius_2) / (b_1.mass + b_2.mass);
-
-//     // 碰撞后，垂直于球心连线方向上的速度分量不变。求出球1新速度：\sqrt{v_radius^2+v_tangent^2}.
-//     double velocity_new = sqrt(pow(v_radius_1, 2) + pow(v_tangent_1, 2));
-//     // 将球1速度在水平、竖直方向分解
-//     b_1.velocity_x = (v_radius_1+v_tangent_1) * dx / dist;
-//     b_1.velocity_y = (v_tangent_1+v_radius_1) * dy / dist;
-
-//     return b_1;
-// }
-
-
 int main (int argc, char* argv[]){
     int NUMBER_OF_BODIES = atoi(argv[1]);   /* Argument 1: the number of bodies  */ 
     int X_RESN = atoi(argv[2]);             /* Argument 2: the width and height of the window */ 
