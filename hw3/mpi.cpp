@@ -1,4 +1,3 @@
-
 #include <stdio.h>
 #include <cstdlib>
 #include <math.h>
@@ -11,8 +10,7 @@
 #define ROOT 0
 #define G 500
 #define TIMESTAMP 0.001
-#define NUMBER_OF_BODIES 300
-#define NUMBER_OF_ITERATIONS 3000
+#define NUMBER_OF_ITERATIONS 1000
 
 struct Body {
     double pos_x, pos_y;
@@ -48,12 +46,15 @@ Body updatePosition(Body body, double duration) {
 }
 
 int main (int argc, char* argv[]){
-    int X_RESN = atoi(argv[1]);
-    int Y_RESN = atoi(argv[1]);
+
+    int NUMBER_OF_BODIES = atoi(argv[1]);   /* Argument 1: the number of bodies  */ 
+    int X_RESN = atoi(argv[2]);             /* Argument 2: the width and height of the window */ 
+    int Y_RESN = atoi(argv[2]);
 
     int rank, num_p;
     Body *bodies;
     double *global_body_array, *local_body_array;
+
     struct timeval timeStart, timeEnd, timeSystemStart;
     double run_time = 0, systemRunTime;
 
@@ -186,7 +187,6 @@ int main (int argc, char* argv[]){
             local_bodies[i] = updatePosition(local_bodies[i], TIMESTAMP);
             local_body_array[3*i+1] = local_bodies[i].pos_x;
             local_body_array[3*i+2] = local_bodies[i].pos_y;
-            // cout << local_body_array[3*i] << ", " << local_body_array[3*i+1] << ", " << local_body_array[3*i+2] << endl;
         }
 
         MPI_Allgather(local_body_array, 3*local_body_num, MPI_DOUBLE, global_body_array, 3*local_body_num, MPI_DOUBLE, MPI_COMM_WORLD);
@@ -194,7 +194,6 @@ int main (int argc, char* argv[]){
 
         if (rank == ROOT) {
             for (int i = 0; i < NUMBER_OF_BODIES; i++) {
-                // cout << i << ": " << global_body_array[3*i+1] << ", " << global_body_array[3*i+2] << endl;
                 XDrawArc(display, win, gc, global_body_array[3*i+1]-5, global_body_array[3*i+2]-5, 10, 10, 0, 360*64);
                 usleep(1);
             }

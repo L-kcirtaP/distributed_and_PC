@@ -11,7 +11,7 @@ using namespace std;
 
 #define G 500
 #define TIMESTAMP 0.001
-#define NUMBER_OF_BODIES 300
+#define NUMBER_OF_ITERATIONS 1000
 
 struct Body {
     double pos_x, pos_y;
@@ -46,52 +46,12 @@ Body updatePosition(Body body, double duration) {
     return body;
 }
 
-// Body collide_border(Body body, int width, int height) {
-//     if (body.pos_y+body.diameter/2 >= height or body.pos_y-body.diameter/2 <= 0) {
-//         body.velocity_y = -body.velocity_y;
-//     }
-//     if (body.pos_x+body.diameter/2 >= width or body.pos_x-body.diameter/2 <= 0) {
-//         body.velocity_x = -body.velocity_x;
-//     }
-//     return body;
-// }
-
-// bool collide_body(Body b_1, Body b_2) {
-//     double dx = b_1.pos_x - b_2.pos_x;
-//     double dy = b_1.pos_y - b_2.pos_y;
-//     double dist = sqrt(pow(dx, 2) + pow(dy, 2));
-//     if (2*dist <= b_1.diameter + b_2.diameter) {
-//         return true;
-//     } else {
-//         return false;
-//     }
-// }
-
-// Body collide(Body b_1, Body b_2) {
-//     double dx = b_1.pos_x - b_2.pos_x;
-//     double dy = b_1.pos_y - b_2.pos_y;
-//     double dist = sqrt(pow(dx, 2) + pow(dy, 2));
-//     // 球1在球心连线方向上的速度分量
-//     double v_radius_1 = (b_1.velocity_x*dx + b_1.velocity_y*dy) / dist;
-//     // 球1在垂直于球心连线方向上的速度分量
-//     double v_tangent_1 = sqrt(pow(b_1.velocity_x, 2) + pow(b_1.velocity_x, 2) - pow(v_radius_1, 2));                        // 球1在球心连线方向上的速度分量
-//     // 球2在球心连线方向上的速度分量
-//     double v_radius_2 = -(b_2.velocity_x*dx + b_2.velocity_y*dy) / dist;
-
-//     // 碰撞后，球1在球心连线方向上的新速度分量
-//     v_radius_1 = (v_radius_1*(b_1.mass-b_2.mass) + 2*b_2.mass*v_radius_2) / (b_1.mass + b_2.mass);
-
-//     // 碰撞后，垂直于球心连线方向上的速度分量不变。求出球1新速度：\sqrt{v_radius^2+v_tangent^2}.
-//     double velocity_new = sqrt(pow(v_radius_1, 2) + pow(v_tangent_1, 2));
-//     // 将球1速度在水平、竖直方向分解
-//     b_1.velocity_x = (v_radius_1+v_tangent_1) * dx / dist;
-//     b_1.velocity_y = (v_tangent_1+v_radius_1) * dy / dist;
-
-//     return b_1;
-// }
-
-
 int main (int argc, char* argv[]){
+
+    int NUMBER_OF_BODIES = atoi(argv[1]);   /* Argument 1: the number of bodies  */ 
+    int X_RESN = atoi(argv[2]);             /* Argument 2: the width and height of the window */ 
+    int Y_RESN = atoi(argv[2]);
+
     Window          win;       
     char            *window_name = "test", *display_name = NULL;                     /* initialization for a window */
     Display         *display;
@@ -113,14 +73,12 @@ int main (int argc, char* argv[]){
       exit (-1);
       }
 
-      /* get screen size */
-      screen = DefaultScreen (display);
-      display_width = DisplayWidth (display, screen);
-      display_height = DisplayHeight (display, screen);
+    /* get screen size */
+    screen = DefaultScreen (display);
+    display_width = DisplayWidth (display, screen);
+    display_height = DisplayHeight (display, screen);
 
-      /* set window size */
-    int X_RESN = atoi(argv[1]);
-    int Y_RESN = atoi(argv[1]);
+    /* set window size */
     width = X_RESN;
     height = Y_RESN;
 
@@ -133,7 +91,7 @@ int main (int argc, char* argv[]){
     border_width = 4;
     win = XCreateSimpleWindow (display, RootWindow (display, screen),
                           x, y, width, height, border_width, 
-                          WhitePixel (display, screen), WhitePixel (display, screen)); //Change to WhitePixel (display, screen) if you want a white background
+                          WhitePixel (display, screen), BlackPixel (display, screen)); //Change to WhitePixel (display, screen) if you want a white background
 
     size_hints.flags = USPosition|USSize;
     size_hints.x = x;
@@ -154,7 +112,7 @@ int main (int argc, char* argv[]){
 
     attr[0].backing_store = Always;
     attr[0].backing_planes = 1;
-    attr[0].backing_pixel = BlackPixel (display, screen);
+    attr[0].backing_pixel = WhitePixel (display, screen);
 
     XChangeWindowAttributes(display, win, CWBackingStore | CWBackingPlanes | CWBackingPixel, attr);
 
@@ -171,7 +129,7 @@ int main (int argc, char* argv[]){
     Status rc1=XAllocColor(display,DefaultColormap(display, screen),&color);
     //set the color and attribute of the graphics content
     XSetForeground (display, gc, color.pixel);
-    XSetBackground (display, gc, BlackPixel (display, screen));
+    XSetBackground (display, gc, WhitePixel (display, screen));
     XSetLineAttributes (display, gc, 1, LineSolid, CapRound, JoinRound);
 
     Body *bodies = (Body *) malloc((NUMBER_OF_BODIES+1)*sizeof(Body));
@@ -179,16 +137,15 @@ int main (int argc, char* argv[]){
 
     for (int i = 0; i < NUMBER_OF_BODIES; i++) {
         // printf("%d\n", sizeof(bodies[i]));
-        bodies[i].pos_x = rand() % 1200;
-        bodies[i].pos_y = rand() % 1200;
+        bodies[i].pos_x = rand() % X_RESN;
+        bodies[i].pos_y = rand() % Y_RESN;
         bodies[i].mass = rand() % 3000 + 2000;
     }
-    bodies[NUMBER_OF_BODIES].pos_x = 600;
-    bodies[NUMBER_OF_BODIES].pos_y = 600;
+    bodies[NUMBER_OF_BODIES].pos_x = X_RESN/2;
+    bodies[NUMBER_OF_BODIES].pos_y = Y_RESN/2;
     bodies[NUMBER_OF_BODIES].mass = 400000;
 
-    int iterations_num = 3000;
-    for (int count = 0; count < iterations_num; count++) {
+    for (int count = 0; count < NUMBER_OF_ITERATIONS; count++) {
         for (int i = 0; i < NUMBER_OF_BODIES+1; i++) {
             // bodies[i] = collide_border(bodies[i], width, height);
             for (int j = 0; j < NUMBER_OF_BODIES+1; j++) {
@@ -197,7 +154,6 @@ int main (int argc, char* argv[]){
                 }
             }
         }
-        // cout << "Iteration Count: " << count << endl;
 
         for (int i = 0; i < NUMBER_OF_BODIES; i++) {
             bodies[i] = updatePosition(bodies[i], TIMESTAMP);
