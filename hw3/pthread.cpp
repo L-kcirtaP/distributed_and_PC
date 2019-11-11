@@ -202,9 +202,9 @@ int main (int argc, char* argv[]) {
     printf("Name: Liu Yang\nStudent ID: 116010151\nAssignment 3, N-Body Simulation, Pthreads Implementation\n");
     printf("Pthreads %d Threads %d Bodies RUN TIME is %lf\n", NUM_THREADS, NUMBER_OF_BODIES, run_time); 
 
-    XFlush(display);
-    usleep(250000);
-    sleep(10);
+    // XFlush(display);
+    // usleep(250000);
+    // sleep(10);
 
     return 0;
 }
