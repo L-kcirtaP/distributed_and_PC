@@ -1,32 +1,8 @@
-Name: Liu Yang
-Student ID: 116010151
-Assignment 3, N-Body Simulation, OpenMP Implementation
 OpenMP 13 Threads 50 Bodies RUN TIME is 0.274367
-Name: Liu Yang
-Student ID: 116010151
-Assignment 3, N-Body Simulation, OpenMP Implementation
 OpenMP 13 Threads 500 Bodies RUN TIME is 5.687667
-Name: Liu Yang
-Student ID: 116010151
-Assignment 3, N-Body Simulation, OpenMP Implementation
 OpenMP 14 Threads 50 Bodies RUN TIME is 0.270994
-Name: Liu Yang
-Student ID: 116010151
-Assignment 3, N-Body Simulation, OpenMP Implementation
 OpenMP 14 Threads 500 Bodies RUN TIME is 5.162810
-Name: Liu Yang
-Student ID: 116010151
-Assignment 3, N-Body Simulation, OpenMP Implementation
 OpenMP 15 Threads 50 Bodies RUN TIME is 0.263209
-Name: Liu Yang
-Student ID: 116010151
-Assignment 3, N-Body Simulation, OpenMP Implementation
 OpenMP 15 Threads 500 Bodies RUN TIME is 5.273377
-Name: Liu Yang
-Student ID: 116010151
-Assignment 3, N-Body Simulation, OpenMP Implementation
 OpenMP 16 Threads 50 Bodies RUN TIME is 0.309212
-Name: Liu Yang
-Student ID: 116010151
-Assignment 3, N-Body Simulation, OpenMP Implementation
 OpenMP 16 Threads 500 Bodies RUN TIME is 5.565366
