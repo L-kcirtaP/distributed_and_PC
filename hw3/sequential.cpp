@@ -145,6 +145,10 @@ int main (int argc, char* argv[]){
     bodies[NUMBER_OF_BODIES].pos_y = Y_RESN/2;
     bodies[NUMBER_OF_BODIES].mass = 400000;
 
+    struct timeval timeStart, timeEnd, timeSystemStart; 
+    double runTime=0, systemRunTime; 
+    gettimeofday(&timeStart, NULL );
+
     for (int count = 0; count < NUMBER_OF_ITERATIONS; count++) {
         for (int i = 0; i < NUMBER_OF_BODIES+1; i++) {
             // bodies[i] = collide_border(bodies[i], width, height);
@@ -157,16 +161,21 @@ int main (int argc, char* argv[]){
 
         for (int i = 0; i < NUMBER_OF_BODIES; i++) {
             bodies[i] = updatePosition(bodies[i], TIMESTAMP);
-            // cout << "Position: " << bodies[i].pos_x << ", " << bodies[i].pos_y << endl; 
         }
 
-        for (int i = 0; i < NUMBER_OF_BODIES; i++) {
-            XDrawArc(display, win, gc, bodies[i].pos_x-5, bodies[i].pos_y-5, 10, 10, 0, 360*64);
-            usleep(1);
-        }
-        XFlush(display);
-        XClearWindow(display,win);
+        // for (int i = 0; i < NUMBER_OF_BODIES; i++) {
+        //     XDrawArc(display, win, gc, bodies[i].pos_x-1, bodies[i].pos_y-1, 2, 2, 0, 360*64);
+        //     usleep(1);
+        // }
+        // XFlush(display);
+        // XClearWindow(display,win);
     }
+
+    gettimeofday( &timeEnd, NULL ); 
+    runTime = (timeEnd.tv_sec - timeStart.tv_sec ) + (double)(timeEnd.tv_usec -timeStart.tv_usec)/1000000;  
+
+    printf("Name: Liu Yang\nStudent ID: 116010151\nAssignment 3, N-Body Simulation, Sequential Implementation\n");
+    printf("Sequential %d Bodies RUN TIME is %lf\n", NUMBER_OF_BODIES, runTime); 
 
     usleep(250000);
     XFlush(display);

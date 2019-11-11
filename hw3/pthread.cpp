@@ -186,21 +186,21 @@ int main (int argc, char* argv[]) {
             pthread_join(threads[i], NULL);
         }
 
-        for (int i = 0; i < NUMBER_OF_BODIES; i++) {
-            XDrawArc(display, win, gc, bodies[i].pos_x-5, bodies[i].pos_y-5, 10, 10, 0, 360*64);
-            usleep(1);
-        }
+        // for (int i = 0; i < NUMBER_OF_BODIES; i++) {
+        //     XDrawArc(display, win, gc, bodies[i].pos_x-5, bodies[i].pos_y-5, 10, 10, 0, 360*64);
+        //     usleep(1);
+        // }
 
-        XFlush(display);
-        XClearWindow(display,win);
+        // XFlush(display);
+        // XClearWindow(display,win);
     }
     
     gettimeofday(&end_time, NULL);
 
     run_time = (end_time.tv_sec - start_time.tv_sec ) + (double)(end_time.tv_usec - start_time.tv_usec)/1000000;  
 
-    printf("Name: Liu Yang\nStudent ID: 116010151\nAssignment 2, Mandelbrot Set, Pthread Implementation\n");
-    printf("%d processes %d*%d resolution RUN TIME is %lf\n", NUM_THREADS, X_RESN, Y_RESN, run_time);
+    printf("Name: Liu Yang\nStudent ID: 116010151\nAssignment 3, N-Body Simulation, Pthreads Implementation\n");
+    printf("Pthreads %d Threads %d Bodies RUN TIME is %lf\n", NUM_THREADS, NUMBER_OF_BODIES, runTime); 
 
     XFlush(display);
     usleep(250000);

@@ -48,9 +48,10 @@ Body updatePosition(Body body, double duration) {
 
 int main (int argc, char* argv[]){
 
-    int NUMBER_OF_BODIES = atoi(argv[1]);   /* Argument 1: the number of bodies  */ 
-    int X_RESN = atoi(argv[2]);             /* Argument 2: the width and height of the window */ 
-    int Y_RESN = atoi(argv[2]);
+    int num_t = atoi(argv[1]);              /* Argument 1: the number of threads  */ 
+    int NUMBER_OF_BODIES = atoi(argv[2]);    /* Argument 2: the number of bodies  */ 
+    int X_RESN = atoi(argv[3]);             /* Argument 3: the width and height of the window */ 
+    int Y_RESN = atoi(argv[3]);
 
     int rank, num_p;
     Body *bodies;
@@ -170,6 +171,10 @@ int main (int argc, char* argv[]){
     MPI_Allgather(local_body_array, 3*local_body_num, MPI_DOUBLE, global_body_array, 3*local_body_num, MPI_DOUBLE, MPI_COMM_WORLD);
     MPI_Barrier(MPI_COMM_WORLD);
 
+    omp_set_num_threads(num_t);
+
+    double start_time = MPI_Wtime();
+
     // start iteration
     for (int count = 0; count < NUMBER_OF_ITERATIONS; count++) {
         int i, j;
@@ -196,14 +201,21 @@ int main (int argc, char* argv[]){
         MPI_Allgather(local_body_array, 3*local_body_num, MPI_DOUBLE, global_body_array, 3*local_body_num, MPI_DOUBLE, MPI_COMM_WORLD);
         MPI_Barrier(MPI_COMM_WORLD);
 
-        if (rank == ROOT) {
-            for (int i = 0; i < NUMBER_OF_BODIES; i++) {
-                XDrawArc(display, win, gc, global_body_array[3*i+1]-5, global_body_array[3*i+2]-5, 10, 10, 0, 360*64);
-                usleep(1);
-            }
-            XFlush(display);
-            XClearWindow(display,win);
-        }
+        // if (rank == ROOT) {
+        //     for (int i = 0; i < NUMBER_OF_BODIES; i++) {
+        //         XDrawArc(display, win, gc, global_body_array[3*i+1]-5, global_body_array[3*i+2]-5, 10, 10, 0, 360*64);
+        //         usleep(1);
+        //     }
+        //     XFlush(display);
+        //     XClearWindow(display,win);
+        // }
+    }
+
+    double finish_time = MPI_Wtime();
+
+    if (rank == ROOT) {
+        printf("Name: Liu Yang\nStudent ID: 116010151\nAssignment 3, N-Body Simulation, MPI+OpenMP Implementation\n");
+        printf("MPI %d Processes %d Threads %d Bodies RUN TIME is %lf\n", num_p, num_t, NUMBER_OF_BODIES, runTime); 
     }
 
     MPI_Finalize();

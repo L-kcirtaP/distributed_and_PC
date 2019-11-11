@@ -45,9 +45,10 @@ Body updatePosition(Body body, double duration) {
 }
 
 int main (int argc, char* argv[]){
-    int NUMBER_OF_BODIES = atoi(argv[1]);   /* Argument 1: the number of bodies  */ 
-    int X_RESN = atoi(argv[2]);             /* Argument 2: the width and height of the window */ 
-    int Y_RESN = atoi(argv[2]);
+    int num_t = atoi(argv[1]);
+    int NUMBER_OF_BODIES = atoi(argv[2]);   /* Argument 1: the number of bodies  */ 
+    int X_RESN = atoi(argv[3]);             /* Argument 2: the width and height of the window */ 
+    int Y_RESN = atoi(argv[3]);
 
     Window          win;       
     char            *window_name = "test", *display_name = NULL;                     /* initialization for a window */
@@ -142,6 +143,13 @@ int main (int argc, char* argv[]){
     bodies[NUMBER_OF_BODIES].pos_y = Y_RESN/2;
     bodies[NUMBER_OF_BODIES].mass = 400000;
 
+    struct timeval timeStart, timeEnd, timeSystemStart; 
+    double runTime=0, systemRunTime; 
+
+    omp_set_num_threads(num_t);
+
+    gettimeofday(&timeStart, NULL );
+
     for (int count = 0; count < NUMBER_OF_ITERATIONS; count++) {
         
         #pragma omp parallel for
@@ -159,13 +167,19 @@ int main (int argc, char* argv[]){
             bodies[i] = updatePosition(bodies[i], TIMESTAMP);
         }
 
-        for (int i = 0; i < NUMBER_OF_BODIES; i++) {
-            XDrawArc(display, win, gc, bodies[i].pos_x-5, bodies[i].pos_y-5, 10, 10, 0, 360*64);
-            usleep(1);
-        }
-        XFlush(display);
-        XClearWindow(display,win);
+        // for (int i = 0; i < NUMBER_OF_BODIES; i++) {
+        //     XDrawArc(display, win, gc, bodies[i].pos_x-5, bodies[i].pos_y-5, 10, 10, 0, 360*64);
+        //     usleep(1);
+        // }
+        // XFlush(display);
+        // XClearWindow(display,win);
     }
+
+    gettimeofday( &timeEnd, NULL ); 
+    runTime = (timeEnd.tv_sec - timeStart.tv_sec ) + (double)(timeEnd.tv_usec -timeStart.tv_usec)/1000000;  
+
+    printf("Name: Liu Yang\nStudent ID: 116010151\nAssignment 3, N-Body Simulation, OpenMP Implementation\n");
+    printf("OpenMP %d Threads %d Bodies RUN TIME is %lf\n", num_t, NUMBER_OF_BODIES, runTime); 
 
     usleep(250000);
     XFlush(display);

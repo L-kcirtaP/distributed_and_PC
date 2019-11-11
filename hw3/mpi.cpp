@@ -169,6 +169,8 @@ int main (int argc, char* argv[]){
     MPI_Allgather(local_body_array, 3*local_body_num, MPI_DOUBLE, global_body_array, 3*local_body_num, MPI_DOUBLE, MPI_COMM_WORLD);
     MPI_Barrier(MPI_COMM_WORLD);
 
+    double start_time = MPI_Wtime();
+
     // start iteration
     for (int count = 0; count < NUMBER_OF_ITERATIONS; count++) {
         for (int i = 0; i < local_body_num; i++) {
@@ -192,14 +194,21 @@ int main (int argc, char* argv[]){
         MPI_Allgather(local_body_array, 3*local_body_num, MPI_DOUBLE, global_body_array, 3*local_body_num, MPI_DOUBLE, MPI_COMM_WORLD);
         MPI_Barrier(MPI_COMM_WORLD);
 
-        if (rank == ROOT) {
-            for (int i = 0; i < NUMBER_OF_BODIES; i++) {
-                XDrawArc(display, win, gc, global_body_array[3*i+1]-5, global_body_array[3*i+2]-5, 10, 10, 0, 360*64);
-                usleep(1);
-            }
-            XFlush(display);
-            XClearWindow(display,win);
-        }
+        // if (rank == ROOT) {
+        //     for (int i = 0; i < NUMBER_OF_BODIES; i++) {
+        //         XDrawArc(display, win, gc, global_body_array[3*i+1]-5, global_body_array[3*i+2]-5, 10, 10, 0, 360*64);
+        //         usleep(1);
+        //     }
+        //     XFlush(display);
+        //     XClearWindow(display,win);
+        // }
+    }
+
+    double finish_time = MPI_Wtime();
+
+    if (rank == ROOT) {
+        printf("Name: Liu Yang\nStudent ID: 116010151\nAssignment 3, N-Body Simulation, MPI Implementation\n");
+        printf("MPI %d Processes %d Bodies RUN TIME is %lf\n", num_p, NUMBER_OF_BODIES, runTime); 
     }
 
     MPI_Finalize();
