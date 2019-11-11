@@ -1,4 +1,3 @@
-
 Pthreads 13 Threads 50 Bodies RUN TIME is 1.139487
 
 Pthreads 13 Threads 500 Bodies RUN TIME is 7.848101
@@ -14,3 +13,42 @@ Pthreads 15 Threads 500 Bodies RUN TIME is 7.179448
 Pthreads 16 Threads 50 Bodies RUN TIME is 1.325147
 
 Pthreads 16 Threads 500 Bodies RUN TIME is 7.072491
+Pthreads 1 Threads 50 Bodies RUN TIME is 0.056267
+Pthreads 1 Threads 500 Bodies RUN TIME is 3.119839
+Pthreads 2 Threads 50 Bodies RUN TIME is 0.036485
+Pthreads 2 Threads 500 Bodies RUN TIME is 1.235296
+Pthreads 2 Threads 5000 Bodies RUN TIME is 105.373924
+Pthreads 3 Threads 50 Bodies RUN TIME is 0.509036
+Pthreads 3 Threads 500 Bodies RUN TIME is 1.666587
+Pthreads 4 Threads 50 Bodies RUN TIME is 0.563857
+Pthreads 4 Threads 500 Bodies RUN TIME is 2.303011
+Pthreads 5 Threads 50 Bodies RUN TIME is 0.486141
+Pthreads 5 Threads 500 Bodies RUN TIME is 2.351120
+Pthreads 6 Threads 50 Bodies RUN TIME is 0.950642
+Pthreads 6 Threads 500 Bodies RUN TIME is 2.302110
+Pthreads 7 Threads 50 Bodies RUN TIME is 0.450001
+Pthreads 7 Threads 500 Bodies RUN TIME is 0.956944
+Pthreads 7 Threads 5000 Bodies RUN TIME is 46.092610
+Pthreads 8 Threads 50 Bodies RUN TIME is 0.077958
+Pthreads 8 Threads 500 Bodies RUN TIME is 0.689687
+Pthreads 8 Threads 5000 Bodies RUN TIME is 34.381816
+Pthreads 9 Threads 50 Bodies RUN TIME is 0.072003
+Pthreads 9 Threads 500 Bodies RUN TIME is 0.650412
+Pthreads 9 Threads 5000 Bodies RUN TIME is 38.838239
+Pthreads 10 Threads 50 Bodies RUN TIME is 0.123696
+Pthreads 10 Threads 500 Bodies RUN TIME is 0.698347
+Pthreads 10 Threads 5000 Bodies RUN TIME is 36.419550
+Pthreads 11 Threads 50 Bodies RUN TIME is 0.107637
+Pthreads 11 Threads 500 Bodies RUN TIME is 0.756008
+Pthreads 11 Threads 5000 Bodies RUN TIME is 32.859212
+Pthreads 12 Threads 50 Bodies RUN TIME is 0.118908
+Pthreads 12 Threads 500 Bodies RUN TIME is 0.686203
+Pthreads 12 Threads 5000 Bodies RUN TIME is 33.721490
+Pthreads 13 Threads 50 Bodies RUN TIME is 0.104099
+Pthreads 13 Threads 500 Bodies RUN TIME is 0.609290
+Pthreads 13 Threads 5000 Bodies RUN TIME is 33.185154
+Pthreads 14 Threads 50 Bodies RUN TIME is 0.126117
+Pthreads 14 Threads 500 Bodies RUN TIME is 0.686582
+Pthreads 14 Threads 5000 Bodies RUN TIME is 32.365839
+Pthreads 15 Threads 50 Bodies RUN TIME is 0.154481
+Pthreads 15 Threads 500 Bodies RUN TIME is 0.778535
