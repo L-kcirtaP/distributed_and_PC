@@ -1,0 +1,9 @@
+#!/bin/bash
+#PBS -l nodes=1:ppn=5,mem=2g,walltime=00:05:00
+#PBS -q batch
+#PBS -m abe
+#PBS -V
+
+timeout 120 /code/116010161/sequential 50 100 -w 6400 -h 6400 >> /code/116010151/sequential_output.txt
+timeout 120 /code/116010161/sequential 500 100 -w 6400 -h 6400 >> /code/116010151/sequential_output.txt
+timeout 120 /code/116010161/sequential 5000 100 -w 6400 -h 6400 >> /code/116010151/sequential_output.txt

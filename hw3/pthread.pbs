@@ -1,0 +1,64 @@
+timeout 120 /code/116010151/pthread 1 50 100 -w 6400 -h 6400 >> /code/116010151/pthread_output.txt
+timeout 120 /code/116010151/pthread 1 500 100 -w 6400 -h 6400 >> /code/116010151/pthread_output.txt
+timeout 120 /code/116010151/pthread 1 5000 100 -w 6400 -h 6400 >> /code/116010151/pthread_output.txt
+
+timeout 120 /code/116010151/pthread 2 50 100 -w 6400 -h 6400 >> /code/116010151/pthread_output.txt
+timeout 120 /code/116010151/pthread 2 500 100 -w 6400 -h 6400 >> /code/116010151/pthread_output.txt
+timeout 120 /code/116010151/pthread 2 5000 100 -w 6400 -h 6400 >> /code/116010151/pthread_output.txt
+
+timeout 120 /code/116010151/pthread 3 50 100 -w 6400 -h 6400 >> /code/116010151/pthread_output.txt
+timeout 120 /code/116010151/pthread 3 500 100 -w 6400 -h 6400 >> /code/116010151/pthread_output.txt
+timeout 120 /code/116010151/pthread 3 5000 100 -w 6400 -h 6400 >> /code/116010151/pthread_output.txt
+
+timeout 120 /code/116010151/pthread 4 50 100 -w 6400 -h 6400 >> /code/116010151/pthread_output.txt
+timeout 120 /code/116010151/pthread 4 500 100 -w 6400 -h 6400 >> /code/116010151/pthread_output.txt
+timeout 120 /code/116010151/pthread 4 5000 100 -w 6400 -h 6400 >> /code/116010151/pthread_output.txt
+
+timeout 120 /code/116010151/pthread 5 50 100 -w 6400 -h 6400 >> /code/116010151/pthread_output.txt
+timeout 120 /code/116010151/pthread 5 500 100 -w 6400 -h 6400 >> /code/116010151/pthread_output.txt
+timeout 120 /code/116010151/pthread 5 5000 100 -w 6400 -h 6400 >> /code/116010151/pthread_output.txt
+
+timeout 120 /code/116010151/pthread 6 50 100 -w 6400 -h 6400 >> /code/116010151/pthread_output.txt
+timeout 120 /code/116010151/pthread 6 500 100 -w 6400 -h 6400 >> /code/116010151/pthread_output.txt
+timeout 120 /code/116010151/pthread 6 5000 100 -w 6400 -h 6400 >> /code/116010151/pthread_output.txt
+
+timeout 120 /code/116010151/pthread 7 50 100 -w 6400 -h 6400 >> /code/116010151/pthread_output.txt
+timeout 120 /code/116010151/pthread 7 500 100 -w 6400 -h 6400 >> /code/116010151/pthread_output.txt
+timeout 120 /code/116010151/pthread 7 5000 100 -w 6400 -h 6400 >> /code/116010151/pthread_output.txt
+
+
+timeout 120 /code/116010151/pthread 8 50 100 -w 6400 -h 6400 >> /code/116010151/pthread_output.txt
+timeout 120 /code/116010151/pthread 8 500 100 -w 6400 -h 6400 >> /code/116010151/pthread_output.txt
+timeout 120 /code/116010151/pthread 8 5000 100 -w 6400 -h 6400 >> /code/116010151/pthread_output.txt
+
+timeout 120 /code/116010151/pthread 9 50 100 -w 6400 -h 6400 >> /code/116010151/pthread_output.txt
+timeout 120 /code/116010151/pthread 9 500 100 -w 6400 -h 6400 >> /code/116010151/pthread_output.txt
+timeout 120 /code/116010151/pthread 9 5000 100 -w 6400 -h 6400 >> /code/116010151/pthread_output.txt
+
+timeout 120 /code/116010151/pthread 10 50 100 -w 6400 -h 6400 >> /code/116010151/pthread_output.txt
+timeout 120 /code/116010151/pthread 10 500 100 -w 6400 -h 6400 >> /code/116010151/pthread_output.txt
+timeout 120 /code/116010151/pthread 10 5000 100 -w 6400 -h 6400 >> /code/116010151/pthread_output.txt
+
+timeout 120 /code/116010151/pthread 11 50 100 -w 6400 -h 6400 >> /code/116010151/pthread_output.txt
+timeout 120 /code/116010151/pthread 11 500 100 -w 6400 -h 6400 >> /code/116010151/pthread_output.txt
+timeout 120 /code/116010151/pthread 11 5000 100 -w 6400 -h 6400 >> /code/116010151/pthread_output.txt
+
+timeout 120 /code/116010151/pthread 12 50 100 -w 6400 -h 6400 >> /code/116010151/pthread_output.txt
+timeout 120 /code/116010151/pthread 12 500 100 -w 6400 -h 6400 >> /code/116010151/pthread_output.txt
+timeout 120 /code/116010151/pthread 12 5000 100 -w 6400 -h 6400 >> /code/116010151/pthread_output.txt
+
+timeout 120 /code/116010151/pthread 13 50 100 -w 6400 -h 6400 >> /code/116010151/pthread_output.txt
+timeout 120 /code/116010151/pthread 13 500 100 -w 6400 -h 6400 >> /code/116010151/pthread_output.txt
+timeout 120 /code/116010151/pthread 13 5000 100 -w 6400 -h 6400 >> /code/116010151/pthread_output.txt
+
+timeout 120 /code/116010151/pthread 14 50 100 -w 6400 -h 6400 >> /code/116010151/pthread_output.txt
+timeout 120 /code/116010151/pthread 14 500 100 -w 6400 -h 6400 >> /code/116010151/pthread_output.txt
+timeout 120 /code/116010151/pthread 14 5000 100 -w 6400 -h 6400 >> /code/116010151/pthread_output.txt
+
+timeout 120 /code/116010151/pthread 15 50 100 -w 6400 -h 6400 >> /code/116010151/pthread_output.txt
+timeout 120 /code/116010151/pthread 15 500 100 -w 6400 -h 6400 >> /code/116010151/pthread_output.txt
+timeout 120 /code/116010151/pthread 15 5000 100 -w 6400 -h 6400 >> /code/116010151/pthread_output.txt
+
+timeout 120 /code/116010151/pthread 16 50 100 -w 6400 -h 6400 >> /code/116010151/pthread_output.txt
+timeout 120 /code/116010151/pthread 16 500 100 -w 6400 -h 6400 >> /code/116010151/pthread_output.txt
+timeout 120 /code/116010151/pthread 16 5000 100 -w 6400 -h 6400 >> /code/116010151/pthread_output.txt

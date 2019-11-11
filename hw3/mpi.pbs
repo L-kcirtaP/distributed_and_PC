@@ -1,0 +1,16 @@
+timeout 120 mpiexec -n 1 -f /home/mpi_config /code/116010151/mpi 5000 100 -w 6400 -h 6400 >> /code/116010151/mpi_output.txt
+timeout 120 mpiexec -n 2 -f /home/mpi_config /code/116010151/mpi 5000 100 -w 6400 -h 6400 >> /code/116010151/mpi_output.txt
+timeout 120 mpiexec -n 3 -f /home/mpi_config /code/116010151/mpi 5000 100 -w 6400 -h 6400 >> /code/116010151/mpi_output.txt
+timeout 120 mpiexec -n 4 -f /home/mpi_config /code/116010151/mpi 5000 100 -w 6400 -h 6400 >> /code/116010151/mpi_output.txt
+timeout 120 mpiexec -n 5 -f /home/mpi_config /code/116010151/mpi 5000 100 -w 6400 -h 6400 >> /code/116010151/mpi_output.txt
+timeout 120 mpiexec -n 6 -f /home/mpi_config /code/116010151/mpi 5000 100 -w 6400 -h 6400 >> /code/116010151/mpi_output.txt
+timeout 120 mpiexec -n 7 -f /home/mpi_config /code/116010151/mpi 5000 100 -w 6400 -h 6400 >> /code/116010151/mpi_output.txt
+timeout 120 mpiexec -n 8 -f /home/mpi_config /code/116010151/mpi 5000 100 -w 6400 -h 6400 >> /code/116010151/mpi_output.txt
+timeout 120 mpiexec -n 9 -f /home/mpi_config /code/116010151/mpi 5000 100 -w 6400 -h 6400 >> /code/116010151/mpi_output.txt
+timeout 120 mpiexec -n 10 -f /home/mpi_config /code/116010151/mpi 5000 100 -w 6400 -h 6400 >> /code/116010151/mpi_output.txt
+timeout 120 mpiexec -n 11 -f /home/mpi_config /code/116010151/mpi 5000 100 -w 6400 -h 6400 >> /code/116010151/mpi_output.txt
+timeout 120 mpiexec -n 12 -f /home/mpi_config /code/116010151/mpi 5000 100 -w 6400 -h 6400 >> /code/116010151/mpi_output.txt
+timeout 120 mpiexec -n 13 -f /home/mpi_config /code/116010151/mpi 5000 100 -w 6400 -h 6400 >> /code/116010151/mpi_output.txt
+timeout 120 mpiexec -n 14 -f /home/mpi_config /code/116010151/mpi 5000 100 -w 6400 -h 6400 >> /code/116010151/mpi_output.txt
+timeout 120 mpiexec -n 15 -f /home/mpi_config /code/116010151/mpi 5000 100 -w 6400 -h 6400 >> /code/116010151/mpi_output.txt
+timeout 120 mpiexec -n 16 -f /home/mpi_config /code/116010151/mpi 5000 100 -w 6400 -h 6400 >> /code/116010151/mpi_output.txt

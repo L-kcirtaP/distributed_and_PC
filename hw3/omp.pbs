@@ -1,0 +1,23 @@
+timeout 120 /code/116010151/omp 1 50 100 -w 6400 -h 6400 >> /code/116010151/omp_output.txt
+timeout 120 /code/116010151/omp 1 500 100 -w 6400 -h 6400 >> /code/116010151/omp_output.txt
+timeout 120 /code/116010151/omp 1 5000 100 -w 6400 -h 6400 >> /code/116010151/omp_output.txt
+
+timeout 120 /code/116010151/omp 2 50 100 -w 6400 -h 6400 >> /code/116010151/omp_output.txt
+timeout 120 /code/116010151/omp 2 500 100 -w 6400 -h 6400 >> /code/116010151/omp_output.txt
+timeout 120 /code/116010151/omp 2 5000 100 -w 6400 -h 6400 >> /code/116010151/omp_output.txt
+
+timeout 120 /code/116010151/omp 3 50 100 -w 6400 -h 6400 >> /code/116010151/omp_output.txt
+timeout 120 /code/116010151/omp 3 500 100 -w 6400 -h 6400 >> /code/116010151/omp_output.txt
+timeout 120 /code/116010151/omp 3 5000 100 -w 6400 -h 6400 >> /code/116010151/omp_output.txt
+
+timeout 120 /code/116010151/omp 4 50 100 -w 6400 -h 6400 >> /code/116010151/omp_output.txt
+timeout 120 /code/116010151/omp 4 500 100 -w 6400 -h 6400 >> /code/116010151/omp_output.txt
+timeout 120 /code/116010151/omp 4 5000 100 -w 6400 -h 6400 >> /code/116010151/omp_output.txt
+
+timeout 120 /code/116010151/omp 5 50 100 -w 6400 -h 6400 >> /code/116010151/omp_output.txt
+timeout 120 /code/116010151/omp 5 500 100 -w 6400 -h 6400 >> /code/116010151/omp_output.txt
+timeout 120 /code/116010151/omp 5 5000 100 -w 6400 -h 6400 >> /code/116010151/omp_output.txt
+
+timeout 120 /code/116010151/omp 6 50 100 -w 6400 -h 6400 >> /code/116010151/omp_output.txt
+timeout 120 /code/116010151/omp 6 500 100 -w 6400 -h 6400 >> /code/116010151/omp_output.txt
+timeout 120 /code/116010151/omp 6 5000 100 -w 6400 -h 6400 >> /code/116010151/omp_output.txt

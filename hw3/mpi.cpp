@@ -10,7 +10,7 @@
 #define ROOT 0
 #define G 500
 #define TIMESTAMP 0.001
-#define NUMBER_OF_ITERATIONS 1000
+#define NUMBER_OF_ITERATIONS 100
 
 struct Body {
     double pos_x, pos_y;
