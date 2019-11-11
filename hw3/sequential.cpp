@@ -177,9 +177,9 @@ int main (int argc, char* argv[]){
     printf("Name: Liu Yang\nStudent ID: 116010151\nAssignment 3, N-Body Simulation, Sequential Implementation\n");
     printf("Sequential %d Bodies RUN TIME is %lf\n", NUMBER_OF_BODIES, runTime); 
 
-    usleep(250000);
-    XFlush(display);
-    cout<<"finish running"<<endl;
-    sleep(10);
+    // usleep(250000);
+    // XFlush(display);
+    // cout<<"finish running"<<endl;
+    // sleep(10);
     return 0;
 }

@@ -181,8 +181,8 @@ int main (int argc, char* argv[]){
     printf("Name: Liu Yang\nStudent ID: 116010151\nAssignment 3, N-Body Simulation, OpenMP Implementation\n");
     printf("OpenMP %d Threads %d Bodies RUN TIME is %lf\n", num_t, NUMBER_OF_BODIES, runTime); 
 
-    usleep(250000);
-    XFlush(display);
-    sleep(10);
+    // usleep(250000);
+    // XFlush(display);
+    // sleep(10);
     return 0;
 }
