@@ -200,7 +200,7 @@ int main (int argc, char* argv[]) {
     run_time = (end_time.tv_sec - start_time.tv_sec ) + (double)(end_time.tv_usec - start_time.tv_usec)/1000000;  
 
     printf("Name: Liu Yang\nStudent ID: 116010151\nAssignment 3, N-Body Simulation, Pthreads Implementation\n");
-    printf("Pthreads %d Threads %d Bodies RUN TIME is %lf\n", NUM_THREADS, NUMBER_OF_BODIES, runTime); 
+    printf("Pthreads %d Threads %d Bodies RUN TIME is %lf\n", NUM_THREADS, NUMBER_OF_BODIES, run_time); 
 
     XFlush(display);
     usleep(250000);
