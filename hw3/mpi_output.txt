@@ -1,91 +1,638 @@
+4 process 10000*10000 resolution RUN TIME is 8.686900
+2 process 100*100 resolution RUN TIME is 0.002138
+2 process 100*100 resolution RUN TIME is 0.002007
+2 process 100*100 resolution RUN TIME is 0.002138
+2 process 1000*1000 resolution RUN TIME is 0.157109
+2 process 1000*1000 resolution RUN TIME is 0.159021
+2 process 1000*1000 resolution RUN TIME is 0.130765
+2 process 10000*10000 resolution RUN TIME is 11.425117
+2 process 10000*10000 resolution RUN TIME is 9.959432
+2 process 10000*10000 resolution RUN TIME is 11.731525
+1 process 100*100 resolution RUN TIME is 0.003351
+1 process 100*100 resolution RUN TIME is 0.003546
+1 process 100*100 resolution RUN TIME is 0.003410
+1 process 1000*1000 resolution RUN TIME is 0.213104
+1 process 1000*1000 resolution RUN TIME is 0.218479
+1 process 1000*1000 resolution RUN TIME is 0.220972
+1 process 10000*10000 resolution RUN TIME is 16.723656
+1 process 10000*10000 resolution RUN TIME is 14.168357
+1 process 10000*10000 resolution RUN TIME is 17.371224
+2 process 100*100 resolution RUN TIME is 0.002281
+2 process 100*100 resolution RUN TIME is 0.002763
+2 process 100*100 resolution RUN TIME is 0.002374
+2 process 1000*1000 resolution RUN TIME is 0.157527
+2 process 1000*1000 resolution RUN TIME is 0.158695
+2 process 1000*1000 resolution RUN TIME is 0.155661
+2 process 10000*10000 resolution RUN TIME is 10.689185
+2 process 10000*10000 resolution RUN TIME is 9.688020
+2 process 10000*10000 resolution RUN TIME is 10.388412
+3 process 100*100 resolution RUN TIME is 0.002464
+3 process 100*100 resolution RUN TIME is 0.002194
+3 process 100*100 resolution RUN TIME is 0.001501
+3 process 1000*1000 resolution RUN TIME is 0.141677
+3 process 1000*1000 resolution RUN TIME is 0.130276
+3 process 1000*1000 resolution RUN TIME is 0.149390
+3 process 10000*10000 resolution RUN TIME is 10.778403
+3 process 10000*10000 resolution RUN TIME is 10.866986
+3 process 10000*10000 resolution RUN TIME is 11.577449
+3 process 20000*20000 resolution RUN TIME is 42.839726
+3 process 20000*20000 resolution RUN TIME is 44.202871
+3 process 20000*20000 resolution RUN TIME is 44.429406
+4 process 100*100 resolution RUN TIME is 0.001688
+4 process 100*100 resolution RUN TIME is 0.000751
+4 process 100*100 resolution RUN TIME is 0.000585
+4 process 1000*1000 resolution RUN TIME is 0.106645
+4 process 1000*1000 resolution RUN TIME is 0.102977
+4 process 1000*1000 resolution RUN TIME is 0.104402
+4 process 10000*10000 resolution RUN TIME is 9.319361
+4 process 10000*10000 resolution RUN TIME is 8.350248
+4 process 10000*10000 resolution RUN TIME is 8.474853
+4 process 20000*20000 resolution RUN TIME is 34.252140
+4 process 20000*20000 resolution RUN TIME is 34.912618
+4 process 20000*20000 resolution RUN TIME is 33.131168
+5 process 100*100 resolution RUN TIME is 0.001766
+5 process 100*100 resolution RUN TIME is 0.001570
+5 process 100*100 resolution RUN TIME is 0.001608
+5 process 1000*1000 resolution RUN TIME is 0.106773
+5 process 1000*1000 resolution RUN TIME is 0.099792
+5 process 1000*1000 resolution RUN TIME is 0.098686
+5 process 10000*10000 resolution RUN TIME is 7.741219
+5 process 10000*10000 resolution RUN TIME is 8.200287
+5 process 10000*10000 resolution RUN TIME is 7.931730
+5 process 20000*20000 resolution RUN TIME is 31.055714
+5 process 20000*20000 resolution RUN TIME is 30.976039
+5 process 20000*20000 resolution RUN TIME is 30.978993
+6 process 100*100 resolution RUN TIME is 0.002486
+6 process 100*100 resolution RUN TIME is 0.002738
+6 process 100*100 resolution RUN TIME is 0.021800
+6 process 1000*1000 resolution RUN TIME is 0.116221
+6 process 1000*1000 resolution RUN TIME is 0.102971
+6 process 1000*1000 resolution RUN TIME is 0.081569
+6 process 10000*10000 resolution RUN TIME is 7.318659
+6 process 10000*10000 resolution RUN TIME is 7.331273
+6 process 10000*10000 resolution RUN TIME is 6.910937
+6 process 20000*20000 resolution RUN TIME is 27.257396
+6 process 20000*20000 resolution RUN TIME is 27.868751
+6 process 20000*20000 resolution RUN TIME is 27.442896
+7 process 100*100 resolution RUN TIME is 0.003447
+7 process 100*100 resolution RUN TIME is 0.002702
+7 process 100*100 resolution RUN TIME is 0.020568
+7 process 1000*1000 resolution RUN TIME is 0.103632
+7 process 1000*1000 resolution RUN TIME is 0.236224
+7 process 1000*1000 resolution RUN TIME is 0.105479
+7 process 10000*10000 resolution RUN TIME is 6.211026
+7 process 10000*10000 resolution RUN TIME is 6.524446
+7 process 10000*10000 resolution RUN TIME is 6.152882
+7 process 20000*20000 resolution RUN TIME is 27.141742
+7 process 20000*20000 resolution RUN TIME is 25.039957
+7 process 20000*20000 resolution RUN TIME is 25.536855
+8 process 100*100 resolution RUN TIME is 0.002628
+8 process 100*100 resolution RUN TIME is 0.002717
+8 process 100*100 resolution RUN TIME is 0.004241
+8 process 1000*1000 resolution RUN TIME is 0.104933
+8 process 1000*1000 resolution RUN TIME is 0.082524
+8 process 1000*1000 resolution RUN TIME is 0.076985
+8 process 10000*10000 resolution RUN TIME is 5.780942
+8 process 10000*10000 resolution RUN TIME is 5.794260
+8 process 10000*10000 resolution RUN TIME is 5.816399
+8 process 20000*20000 resolution RUN TIME is 22.664300
+8 process 20000*20000 resolution RUN TIME is 25.712713
+8 process 20000*20000 resolution RUN TIME is 22.391711
+9 process 100*100 resolution RUN TIME is 0.003575
+9 process 100*100 resolution RUN TIME is 0.021962
+9 process 100*100 resolution RUN TIME is 0.009435
+9 process 1000*1000 resolution RUN TIME is 0.102540
+9 process 1000*1000 resolution RUN TIME is 0.104991
+9 process 1000*1000 resolution RUN TIME is 0.108495
+9 process 10000*10000 resolution RUN TIME is 6.000742
+9 process 10000*10000 resolution RUN TIME is 6.025740
+9 process 10000*10000 resolution RUN TIME is 6.042187
+9 process 20000*20000 resolution RUN TIME is 23.526167
+9 process 20000*20000 resolution RUN TIME is 23.153935
+9 process 20000*20000 resolution RUN TIME is 23.112999
+10 process 100*100 resolution RUN TIME is 0.004267
+10 process 100*100 resolution RUN TIME is 0.003038
+10 process 100*100 resolution RUN TIME is 0.007928
+10 process 1000*1000 resolution RUN TIME is 0.099818
+10 process 1000*1000 resolution RUN TIME is 0.115303
+10 process 1000*1000 resolution RUN TIME is 0.080796
+10 process 10000*10000 resolution RUN TIME is 5.872182
+10 process 10000*10000 resolution RUN TIME is 5.612681
+10 process 10000*10000 resolution RUN TIME is 5.856982
+10 process 20000*20000 resolution RUN TIME is 22.870156
+10 process 20000*20000 resolution RUN TIME is 23.730921
+10 process 20000*20000 resolution RUN TIME is 22.049014
+12 process 100*100 resolution RUN TIME is 0.014271
+12 process 100*100 resolution RUN TIME is 0.049796
+12 process 100*100 resolution RUN TIME is 0.029686
+12 process 1000*1000 resolution RUN TIME is 0.096979
+12 process 1000*1000 resolution RUN TIME is 0.118184
+12 process 1000*1000 resolution RUN TIME is 0.110661
+12 process 10000*10000 resolution RUN TIME is 5.609033
+12 process 10000*10000 resolution RUN TIME is 5.430786
+12 process 10000*10000 resolution RUN TIME is 5.751669
+12 process 20000*20000 resolution RUN TIME is 20.483213
+12 process 20000*20000 resolution RUN TIME is 20.949607
+12 process 20000*20000 resolution RUN TIME is 21.098822
+13 process 100*100 resolution RUN TIME is 0.002334
+13 process 100*100 resolution RUN TIME is 0.005157
+13 process 100*100 resolution RUN TIME is 0.027642
+13 process 1000*1000 resolution RUN TIME is 0.084760
+13 process 1000*1000 resolution RUN TIME is 0.111305
+13 process 1000*1000 resolution RUN TIME is 0.073914
+13 process 10000*10000 resolution RUN TIME is 5.487654
+13 process 10000*10000 resolution RUN TIME is 4.850830
+13 process 10000*10000 resolution RUN TIME is 5.554712
+13 process 20000*20000 resolution RUN TIME is 21.492764
+13 process 20000*20000 resolution RUN TIME is 19.991535
+13 process 20000*20000 resolution RUN TIME is 18.266937
+14 process 100*100 resolution RUN TIME is 0.006692
+14 process 100*100 resolution RUN TIME is 0.008698
+14 process 100*100 resolution RUN TIME is 0.005836
+14 process 1000*1000 resolution RUN TIME is 0.097495
+14 process 1000*1000 resolution RUN TIME is 0.115009
+14 process 1000*1000 resolution RUN TIME is 0.097863
+14 process 10000*10000 resolution RUN TIME is 5.041583
+14 process 10000*10000 resolution RUN TIME is 4.964175
+14 process 10000*10000 resolution RUN TIME is 4.653190
+14 process 20000*20000 resolution RUN TIME is 18.115494
+14 process 20000*20000 resolution RUN TIME is 17.720296
+14 process 20000*20000 resolution RUN TIME is 20.941381
+15 process 100*100 resolution RUN TIME is 0.029541
+15 process 100*100 resolution RUN TIME is 0.001860
+15 process 100*100 resolution RUN TIME is 0.026805
+15 process 1000*1000 resolution RUN TIME is 0.103435
+15 process 1000*1000 resolution RUN TIME is 0.057164
+15 process 1000*1000 resolution RUN TIME is 0.076116
+15 process 10000*10000 resolution RUN TIME is 5.287500
+15 process 10000*10000 resolution RUN TIME is 4.546348
+15 process 10000*10000 resolution RUN TIME is 4.338932
+15 process 20000*20000 resolution RUN TIME is 16.681303
+15 process 20000*20000 resolution RUN TIME is 19.280716
+15 process 20000*20000 resolution RUN TIME is 19.796698
+16 process 100*100 resolution RUN TIME is 0.023529
+16 process 100*100 resolution RUN TIME is 0.040882
+16 process 100*100 resolution RUN TIME is 0.006082
+16 process 1000*1000 resolution RUN TIME is 0.069084
+16 process 1000*1000 resolution RUN TIME is 0.074728
+16 process 1000*1000 resolution RUN TIME is 0.086829
+16 process 10000*10000 resolution RUN TIME is 5.412407
+16 process 10000*10000 resolution RUN TIME is 4.906743
+16 process 10000*10000 resolution RUN TIME is 4.840676
+16 process 20000*20000 resolution RUN TIME is 19.933044
+16 process 20000*20000 resolution RUN TIME is 20.083145
+16 process 20000*20000 resolution RUN TIME is 20.480048
+1 process 100*100 resolution RUN TIME is 0.003337
+1 process 100*100 resolution RUN TIME is 0.003660
+1 process 100*100 resolution RUN TIME is 0.003383
+1 process 1000*1000 resolution RUN TIME is 0.215092
+1 process 1000*1000 resolution RUN TIME is 0.226009
+1 process 1000*1000 resolution RUN TIME is 0.223566
+1 process 10000*10000 resolution RUN TIME is 15.971466
+1 process 10000*10000 resolution RUN TIME is 14.536250
+1 process 10000*10000 resolution RUN TIME is 15.006561
+1 process 100*100 resolution RUN TIME is 0.003400
+1 process 100*100 resolution RUN TIME is 0.003367
+1 process 100*100 resolution RUN TIME is 0.003382
+1 process 1000*1000 resolution RUN TIME is 0.218694
+1 process 1000*1000 resolution RUN TIME is 0.223636
+1 process 1000*1000 resolution RUN TIME is 0.225792
+1 process 10000*10000 resolution RUN TIME is 14.196027
+1 process 10000*10000 resolution RUN TIME is 13.953562
+1 process 10000*10000 resolution RUN TIME is 15.716912
+11 process 100*100 resolution RUN TIME is 0.011309
+11 process 100*100 resolution RUN TIME is 0.005004
+11 process 100*100 resolution RUN TIME is 0.003892
+11 process 1000*1000 resolution RUN TIME is 0.107496
+11 process 1000*1000 resolution RUN TIME is 0.095711
+11 process 1000*1000 resolution RUN TIME is 0.094850
+11 process 10000*10000 resolution RUN TIME is 5.751529
+11 process 10000*10000 resolution RUN TIME is 6.067377
+11 process 10000*10000 resolution RUN TIME is 5.773671
+11 process 20000*20000 resolution RUN TIME is 21.231854
+11 process 20000*20000 resolution RUN TIME is 21.605156
+11 process 20000*20000 resolution RUN TIME is 21.462671
+Name: Liu Yang
+Student ID: 116010151
+Assignment 3, N-Body Simulation, MPI Implementation
 MPI 1 Processes 50 Bodies RUN TIME is 0.237720
+Name: Liu Yang
+Student ID: 116010151
+Assignment 3, N-Body Simulation, MPI Implementation
 MPI 1 Processes 50 Bodies RUN TIME is 0.247784
+Name: Liu Yang
+Student ID: 116010151
+Assignment 3, N-Body Simulation, MPI Implementation
 MPI 1 Processes 50 Bodies RUN TIME is 0.272344
+Name: Liu Yang
+Student ID: 116010151
+Assignment 3, N-Body Simulation, MPI Implementation
 MPI 1 Processes 500 Bodies RUN TIME is 16.156415
+Name: Liu Yang
+Student ID: 116010151
+Assignment 3, N-Body Simulation, MPI Implementation
 MPI 1 Processes 500 Bodies RUN TIME is 17.019672
+Name: Liu Yang
+Student ID: 116010151
+Assignment 3, N-Body Simulation, MPI Implementation
 MPI 1 Processes 50 Bodies RUN TIME is 0.236390
+Name: Liu Yang
+Student ID: 116010151
+Assignment 3, N-Body Simulation, MPI Implementation
 MPI 1 Processes 50 Bodies RUN TIME is 0.237506
+Name: Liu Yang
+Student ID: 116010151
+Assignment 3, N-Body Simulation, MPI Implementation
 MPI 1 Processes 50 Bodies RUN TIME is 0.262385
+Name: Liu Yang
+Student ID: 116010151
+Assignment 3, N-Body Simulation, MPI Implementation
 MPI 1 Processes 500 Bodies RUN TIME is 19.034456
+Name: Liu Yang
+Student ID: 116010151
+Assignment 3, N-Body Simulation, MPI Implementation
 MPI 1 Processes 500 Bodies RUN TIME is 16.331338
+Name: Liu Yang
+Student ID: 116010151
+Assignment 3, N-Body Simulation, MPI Implementation
 MPI 1 Processes 500 Bodies RUN TIME is 14.367404
+Name: Liu Yang
+Student ID: 116010151
+Assignment 3, N-Body Simulation, MPI Implementation
 MPI 2 Processes 50 Bodies RUN TIME is 0.130382
+Name: Liu Yang
+Student ID: 116010151
+Assignment 3, N-Body Simulation, MPI Implementation
 MPI 2 Processes 50 Bodies RUN TIME is 0.136526
+Name: Liu Yang
+Student ID: 116010151
+Assignment 3, N-Body Simulation, MPI Implementation
 MPI 2 Processes 50 Bodies RUN TIME is 0.137261
+Name: Liu Yang
+Student ID: 116010151
+Assignment 3, N-Body Simulation, MPI Implementation
 MPI 2 Processes 500 Bodies RUN TIME is 10.021158
+Name: Liu Yang
+Student ID: 116010151
+Assignment 3, N-Body Simulation, MPI Implementation
 MPI 2 Processes 500 Bodies RUN TIME is 10.546384
+Name: Liu Yang
+Student ID: 116010151
+Assignment 3, N-Body Simulation, MPI Implementation
 MPI 2 Processes 500 Bodies RUN TIME is 10.926063
+Name: Liu Yang
+Student ID: 116010151
+Assignment 3, N-Body Simulation, MPI Implementation
 MPI 3 Processes 50 Bodies RUN TIME is 0.100882
+Name: Liu Yang
+Student ID: 116010151
+Assignment 3, N-Body Simulation, MPI Implementation
 MPI 3 Processes 50 Bodies RUN TIME is 0.101631
+Name: Liu Yang
+Student ID: 116010151
+Assignment 3, N-Body Simulation, MPI Implementation
 MPI 3 Processes 50 Bodies RUN TIME is 0.083295
+Name: Liu Yang
+Student ID: 116010151
+Assignment 3, N-Body Simulation, MPI Implementation
 MPI 3 Processes 500 Bodies RUN TIME is 7.797281
+Name: Liu Yang
+Student ID: 116010151
+Assignment 3, N-Body Simulation, MPI Implementation
 MPI 3 Processes 500 Bodies RUN TIME is 7.884644
+Name: Liu Yang
+Student ID: 116010151
+Assignment 3, N-Body Simulation, MPI Implementation
 MPI 3 Processes 500 Bodies RUN TIME is 7.508608
+Name: Liu Yang
+Student ID: 116010151
+Assignment 3, N-Body Simulation, MPI Implementation
 MPI 4 Processes 50 Bodies RUN TIME is 0.086727
+Name: Liu Yang
+Student ID: 116010151
+Assignment 3, N-Body Simulation, MPI Implementation
 MPI 4 Processes 50 Bodies RUN TIME is 0.085786
+Name: Liu Yang
+Student ID: 116010151
+Assignment 3, N-Body Simulation, MPI Implementation
 MPI 4 Processes 50 Bodies RUN TIME is 0.082394
+Name: Liu Yang
+Student ID: 116010151
+Assignment 3, N-Body Simulation, MPI Implementation
 MPI 4 Processes 500 Bodies RUN TIME is 5.857215
+Name: Liu Yang
+Student ID: 116010151
+Assignment 3, N-Body Simulation, MPI Implementation
 MPI 4 Processes 500 Bodies RUN TIME is 5.963647
+Name: Liu Yang
+Student ID: 116010151
+Assignment 3, N-Body Simulation, MPI Implementation
 MPI 4 Processes 500 Bodies RUN TIME is 5.898333
+Name: Liu Yang
+Student ID: 116010151
+Assignment 3, N-Body Simulation, MPI Implementation
 MPI 5 Processes 50 Bodies RUN TIME is 0.070393
+Name: Liu Yang
+Student ID: 116010151
+Assignment 3, N-Body Simulation, MPI Implementation
 MPI 5 Processes 50 Bodies RUN TIME is 0.053495
+Name: Liu Yang
+Student ID: 116010151
+Assignment 3, N-Body Simulation, MPI Implementation
 MPI 5 Processes 50 Bodies RUN TIME is 0.074271
+Name: Liu Yang
+Student ID: 116010151
+Assignment 3, N-Body Simulation, MPI Implementation
 MPI 5 Processes 500 Bodies RUN TIME is 4.313874
+Name: Liu Yang
+Student ID: 116010151
+Assignment 3, N-Body Simulation, MPI Implementation
 MPI 5 Processes 500 Bodies RUN TIME is 4.114934
+Name: Liu Yang
+Student ID: 116010151
+Assignment 3, N-Body Simulation, MPI Implementation
 MPI 5 Processes 500 Bodies RUN TIME is 4.114372
+Name: Liu Yang
+Student ID: 116010151
+Assignment 3, N-Body Simulation, MPI Implementation
 MPI 1 Processes 50 Bodies RUN TIME is 0.230905
+Name: Liu Yang
+Student ID: 116010151
+Assignment 3, N-Body Simulation, MPI Implementation
 MPI 1 Processes 50 Bodies RUN TIME is 0.210162
+Name: Liu Yang
+Student ID: 116010151
+Assignment 3, N-Body Simulation, MPI Implementation
 MPI 1 Processes 50 Bodies RUN TIME is 0.233758
+Name: Liu Yang
+Student ID: 116010151
+Assignment 3, N-Body Simulation, MPI Implementation
 MPI 1 Processes 500 Bodies RUN TIME is 14.460832
+Name: Liu Yang
+Student ID: 116010151
+Assignment 3, N-Body Simulation, MPI Implementation
 MPI 1 Processes 500 Bodies RUN TIME is 14.271513
+Name: Liu Yang
+Student ID: 116010151
+Assignment 3, N-Body Simulation, MPI Implementation
 MPI 1 Processes 500 Bodies RUN TIME is 14.568322
+Name: Liu Yang
+Student ID: 116010151
+Assignment 3, N-Body Simulation, MPI Implementation
 MPI 7 Processes 50 Bodies RUN TIME is 0.555001
+Name: Liu Yang
+Student ID: 116010151
+Assignment 3, N-Body Simulation, MPI Implementation
 MPI 7 Processes 50 Bodies RUN TIME is 0.859501
+Name: Liu Yang
+Student ID: 116010151
+Assignment 3, N-Body Simulation, MPI Implementation
 MPI 7 Processes 50 Bodies RUN TIME is 0.493247
+Name: Liu Yang
+Student ID: 116010151
+Assignment 3, N-Body Simulation, MPI Implementation
 MPI 7 Processes 500 Bodies RUN TIME is 3.984763
+Name: Liu Yang
+Student ID: 116010151
+Assignment 3, N-Body Simulation, MPI Implementation
 MPI 7 Processes 500 Bodies RUN TIME is 4.715425
+Name: Liu Yang
+Student ID: 116010151
+Assignment 3, N-Body Simulation, MPI Implementation
 MPI 7 Processes 500 Bodies RUN TIME is 5.719775
+Name: Liu Yang
+Student ID: 116010151
+Assignment 3, N-Body Simulation, MPI Implementation
 MPI 8 Processes 50 Bodies RUN TIME is 0.402388
+Name: Liu Yang
+Student ID: 116010151
+Assignment 3, N-Body Simulation, MPI Implementation
 MPI 8 Processes 50 Bodies RUN TIME is 0.949348
+Name: Liu Yang
+Student ID: 116010151
+Assignment 3, N-Body Simulation, MPI Implementation
 MPI 8 Processes 50 Bodies RUN TIME is 0.739299
+Name: Liu Yang
+Student ID: 116010151
+Assignment 3, N-Body Simulation, MPI Implementation
 MPI 8 Processes 500 Bodies RUN TIME is 4.265812
+Name: Liu Yang
+Student ID: 116010151
+Assignment 3, N-Body Simulation, MPI Implementation
 MPI 8 Processes 500 Bodies RUN TIME is 4.155961
+Name: Liu Yang
+Student ID: 116010151
+Assignment 3, N-Body Simulation, MPI Implementation
 MPI 8 Processes 500 Bodies RUN TIME is 4.163080
+Name: Liu Yang
+Student ID: 116010151
+Assignment 3, N-Body Simulation, MPI Implementation
 MPI 9 Processes 50 Bodies RUN TIME is 0.752842
+Name: Liu Yang
+Student ID: 116010151
+Assignment 3, N-Body Simulation, MPI Implementation
 MPI 9 Processes 50 Bodies RUN TIME is 0.619240
+Name: Liu Yang
+Student ID: 116010151
+Assignment 3, N-Body Simulation, MPI Implementation
 MPI 9 Processes 50 Bodies RUN TIME is 0.588772
+Name: Liu Yang
+Student ID: 116010151
+Assignment 3, N-Body Simulation, MPI Implementation
 MPI 9 Processes 500 Bodies RUN TIME is 4.596905
+Name: Liu Yang
+Student ID: 116010151
+Assignment 3, N-Body Simulation, MPI Implementation
 MPI 9 Processes 500 Bodies RUN TIME is 3.874620
+Name: Liu Yang
+Student ID: 116010151
+Assignment 3, N-Body Simulation, MPI Implementation
 MPI 9 Processes 500 Bodies RUN TIME is 4.111712
+Name: Liu Yang
+Student ID: 116010151
+Assignment 3, N-Body Simulation, MPI Implementation
 MPI 10 Processes 50 Bodies RUN TIME is 0.635249
+Name: Liu Yang
+Student ID: 116010151
+Assignment 3, N-Body Simulation, MPI Implementation
 MPI 10 Processes 50 Bodies RUN TIME is 0.926205
+Name: Liu Yang
+Student ID: 116010151
+Assignment 3, N-Body Simulation, MPI Implementation
 MPI 10 Processes 50 Bodies RUN TIME is 0.758414
+Name: Liu Yang
+Student ID: 116010151
+Assignment 3, N-Body Simulation, MPI Implementation
 MPI 10 Processes 500 Bodies RUN TIME is 3.581671
+Name: Liu Yang
+Student ID: 116010151
+Assignment 3, N-Body Simulation, MPI Implementation
 MPI 10 Processes 500 Bodies RUN TIME is 3.437594
+Name: Liu Yang
+Student ID: 116010151
+Assignment 3, N-Body Simulation, MPI Implementation
 MPI 10 Processes 500 Bodies RUN TIME is 3.943779
+Name: Liu Yang
+Student ID: 116010151
+Assignment 3, N-Body Simulation, MPI Implementation
 MPI 11 Processes 50 Bodies RUN TIME is 1.150102
+Name: Liu Yang
+Student ID: 116010151
+Assignment 3, N-Body Simulation, MPI Implementation
 MPI 11 Processes 50 Bodies RUN TIME is 0.921741
+Name: Liu Yang
+Student ID: 116010151
+Assignment 3, N-Body Simulation, MPI Implementation
 MPI 11 Processes 50 Bodies RUN TIME is 0.885805
+Name: Liu Yang
+Student ID: 116010151
+Assignment 3, N-Body Simulation, MPI Implementation
 MPI 11 Processes 500 Bodies RUN TIME is 3.748118
+Name: Liu Yang
+Student ID: 116010151
+Assignment 3, N-Body Simulation, MPI Implementation
 MPI 11 Processes 500 Bodies RUN TIME is 4.172662
+Name: Liu Yang
+Student ID: 116010151
+Assignment 3, N-Body Simulation, MPI Implementation
 MPI 11 Processes 500 Bodies RUN TIME is 3.640306
+Name: Liu Yang
+Student ID: 116010151
+Assignment 3, N-Body Simulation, MPI Implementation
 MPI 12 Processes 50 Bodies RUN TIME is 0.955214
+Name: Liu Yang
+Student ID: 116010151
+Assignment 3, N-Body Simulation, MPI Implementation
 MPI 12 Processes 50 Bodies RUN TIME is 0.876092
+Name: Liu Yang
+Student ID: 116010151
+Assignment 3, N-Body Simulation, MPI Implementation
 MPI 12 Processes 50 Bodies RUN TIME is 0.862315
+Name: Liu Yang
+Student ID: 116010151
+Assignment 3, N-Body Simulation, MPI Implementation
 MPI 12 Processes 500 Bodies RUN TIME is 3.923932
+Name: Liu Yang
+Student ID: 116010151
+Assignment 3, N-Body Simulation, MPI Implementation
 MPI 12 Processes 500 Bodies RUN TIME is 3.992565
+Name: Liu Yang
+Student ID: 116010151
+Assignment 3, N-Body Simulation, MPI Implementation
 MPI 12 Processes 500 Bodies RUN TIME is 4.145033
+Name: Liu Yang
+Student ID: 116010151
+Assignment 3, N-Body Simulation, MPI Implementation
 MPI 13 Processes 50 Bodies RUN TIME is 1.082403
+Name: Liu Yang
+Student ID: 116010151
+Assignment 3, N-Body Simulation, MPI Implementation
 MPI 13 Processes 50 Bodies RUN TIME is 1.020776
+Name: Liu Yang
+Student ID: 116010151
+Assignment 3, N-Body Simulation, MPI Implementation
 MPI 13 Processes 50 Bodies RUN TIME is 1.047109
+Name: Liu Yang
+Student ID: 116010151
+Assignment 3, N-Body Simulation, MPI Implementation
 MPI 13 Processes 500 Bodies RUN TIME is 3.846535
+Name: Liu Yang
+Student ID: 116010151
+Assignment 3, N-Body Simulation, MPI Implementation
 MPI 13 Processes 500 Bodies RUN TIME is 3.840138
+Name: Liu Yang
+Student ID: 116010151
+Assignment 3, N-Body Simulation, MPI Implementation
 MPI 13 Processes 500 Bodies RUN TIME is 4.136775
+Name: Liu Yang
+Student ID: 116010151
+Assignment 3, N-Body Simulation, MPI Implementation
 MPI 13 Processes 50 Bodies RUN TIME is 1.014519
+Name: Liu Yang
+Student ID: 116010151
+Assignment 3, N-Body Simulation, MPI Implementation
 MPI 13 Processes 500 Bodies RUN TIME is 3.914623
+Name: Liu Yang
+Student ID: 116010151
+Assignment 3, N-Body Simulation, MPI Implementation
 MPI 14 Processes 50 Bodies RUN TIME is 1.154285
+Name: Liu Yang
+Student ID: 116010151
+Assignment 3, N-Body Simulation, MPI Implementation
 MPI 14 Processes 500 Bodies RUN TIME is 3.386758
+Name: Liu Yang
+Student ID: 116010151
+Assignment 3, N-Body Simulation, MPI Implementation
 MPI 15 Processes 50 Bodies RUN TIME is 1.211860
+Name: Liu Yang
+Student ID: 116010151
+Assignment 3, N-Body Simulation, MPI Implementation
 MPI 15 Processes 500 Bodies RUN TIME is 3.701285
+Name: Liu Yang
+Student ID: 116010151
+Assignment 3, N-Body Simulation, MPI Implementation
 MPI 16 Processes 50 Bodies RUN TIME is 1.020694
+Name: Liu Yang
+Student ID: 116010151
+Assignment 3, N-Body Simulation, MPI Implementation
 MPI 16 Processes 500 Bodies RUN TIME is 3.782443
+Name: Liu Yang
+Student ID: 116010151
+Assignment 3, N-Body Simulation, MPI Implementation
+MPI 2 Processes 5000 Bodies RUN TIME is 80.733368
+Name: Liu Yang
+Student ID: 116010151
+Assignment 3, N-Body Simulation, MPI Implementation
+MPI 3 Processes 5000 Bodies RUN TIME is 57.252930
+Name: Liu Yang
+Student ID: 116010151
+Assignment 3, N-Body Simulation, MPI Implementation
+MPI 4 Processes 5000 Bodies RUN TIME is 55.592351
+Name: Liu Yang
+Student ID: 116010151
+Assignment 3, N-Body Simulation, MPI Implementation
+MPI 5 Processes 5000 Bodies RUN TIME is 51.941087
+Name: Liu Yang
+Student ID: 116010151
+Assignment 3, N-Body Simulation, MPI Implementation
+MPI 6 Processes 5000 Bodies RUN TIME is 48.686640
+Name: Liu Yang
+Student ID: 116010151
+Assignment 3, N-Body Simulation, MPI Implementation
+MPI 7 Processes 5000 Bodies RUN TIME is 38.763451
+Name: Liu Yang
+Student ID: 116010151
+Assignment 3, N-Body Simulation, MPI Implementation
+MPI 8 Processes 5000 Bodies RUN TIME is 32.672263
+Name: Liu Yang
+Student ID: 116010151
+Assignment 3, N-Body Simulation, MPI Implementation
+MPI 9 Processes 5000 Bodies RUN TIME is 30.595938
+Name: Liu Yang
+Student ID: 116010151
+Assignment 3, N-Body Simulation, MPI Implementation
+MPI 10 Processes 5000 Bodies RUN TIME is 27.668219
+Name: Liu Yang
+Student ID: 116010151
+Assignment 3, N-Body Simulation, MPI Implementation
+MPI 11 Processes 5000 Bodies RUN TIME is 26.152949
+Name: Liu Yang
+Student ID: 116010151
+Assignment 3, N-Body Simulation, MPI Implementation
+MPI 12 Processes 5000 Bodies RUN TIME is 24.861420
+Name: Liu Yang
+Student ID: 116010151
+Assignment 3, N-Body Simulation, MPI Implementation
+MPI 13 Processes 5000 Bodies RUN TIME is 21.447746
+Name: Liu Yang
+Student ID: 116010151
+Assignment 3, N-Body Simulation, MPI Implementation
+MPI 14 Processes 5000 Bodies RUN TIME is 20.427591
+Name: Liu Yang
+Student ID: 116010151
+Assignment 3, N-Body Simulation, MPI Implementation
+MPI 15 Processes 5000 Bodies RUN TIME is 19.187451
+Name: Liu Yang
+Student ID: 116010151
+Assignment 3, N-Body Simulation, MPI Implementation
+MPI 16 Processes 5000 Bodies RUN TIME is 17.462884
