@@ -168,8 +168,8 @@ int main (int argc, char* argv[]) {
     srand((unsigned)time(NULL));
     for (int i = 0; i < local_body_num*NUM_THREADS; i++) {
         bodies[i].mass = rand() % 3000 + 2000;
-        bodies[i].pos_x = rand() % width;
-        bodies[i].pos_y = rand() % height;
+        bodies[i].pos_x = rand() % X_RESN;
+        bodies[i].pos_y = rand() % Y_RESN;
     }
 
     struct timeval start_time, end_time;
