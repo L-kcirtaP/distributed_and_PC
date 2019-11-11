@@ -208,7 +208,7 @@ int main (int argc, char* argv[]){
 
     if (rank == ROOT) {
         printf("Name: Liu Yang\nStudent ID: 116010151\nAssignment 3, N-Body Simulation, MPI Implementation\n");
-        printf("MPI %d Processes %d Bodies RUN TIME is %lf\n", num_p, NUMBER_OF_BODIES, runTime); 
+        printf("MPI %d Processes %d Bodies RUN TIME is %lf\n", num_p, NUMBER_OF_BODIES, finish_time-start_time); 
     }
 
     MPI_Finalize();
