@@ -160,8 +160,8 @@ int main (int argc, char* argv[]){
     srand((unsigned)time(NULL)+rank*num_p);
     for (int i = 0; i < local_body_num; i++) {
         local_bodies[i].mass = rand() % 3000 + 2000;
-        local_bodies[i].pos_x = rand() % width;
-        local_bodies[i].pos_y = rand() % height;
+        local_bodies[i].pos_x = rand() % X_RESN;
+        local_bodies[i].pos_y = rand() % Y_RESN;
 
         local_body_array[3*i] = local_bodies[i].mass;
         local_body_array[3*i+1] = local_bodies[i].pos_x;
@@ -188,7 +188,7 @@ int main (int argc, char* argv[]){
                     local_bodies[i] = applyForce(local_bodies[i], obj_mass, obj_pos_x, obj_pos_y);
                 }
             }
-            local_bodies[i] = applyForce(local_bodies[i], 400000, width/2, height/2);
+            local_bodies[i] = applyForce(local_bodies[i], 400000, X_RESN/2, Y_RESN/2);
         }
 
         #pragma omp parallel for firstprivate(local_bodies) firstprivate(local_body_array)
