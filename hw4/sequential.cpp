@@ -56,7 +56,7 @@ int main (int argc, char* argv[]){
     border_width = 4;
     win = XCreateSimpleWindow (display, RootWindow (display, screen),
                           x, y, width, height, border_width, 
-                          WhitePixel (display, screen), BlackPixel (display, screen)); //Change to WhitePixel (display, screen) if you want a white background
+                          WhitePixel (display, screen), WhitePixel (display, screen)); //Change to WhitePixel (display, screen) if you want a white background
 
     size_hints.flags = USPosition|USSize;
     size_hints.x = x;
@@ -77,7 +77,7 @@ int main (int argc, char* argv[]){
 
     attr[0].backing_store = Always;
     attr[0].backing_planes = 1;
-    attr[0].backing_pixel = WhitePixel (display, screen);
+    attr[0].backing_pixel = BlackPixel (display, screen);
 
     XChangeWindowAttributes(display, win, CWBackingStore | CWBackingPlanes | CWBackingPixel, attr);
 
@@ -94,27 +94,21 @@ int main (int argc, char* argv[]){
     Status rc1=XAllocColor(display,DefaultColormap(display, screen),&color);
     //set the color and attribute of the graphics content
     XSetForeground (display, gc, color.pixel);
-    XSetBackground (display, gc, WhitePixel (display, screen));
+    XSetBackground (display, gc, BlackPixel (display, screen));
     XSetLineAttributes (display, gc, 1, LineSolid, CapRound, JoinRound);
+
 
     double * temp = (double *) malloc ((X_RESN+1)*(Y_RESN+1)*sizeof(double));
     double * room = (double *) malloc ((X_RESN+1)*(Y_RESN+1)*sizeof(double));
 
-    int num_points = (X_RESN+1)*(Y_RESN+1);
-
-    for (int i = 0; i < num_points; i++) {
+    for (int i = 0; i < (X_RESN+1)*(Y_RESN+1); i++) {
         room[i] = 20;
     }
-    // for (int i = 0; i < X_RESN+1; i++) {
-    //     room[i] = 20;
-    //     room[Y_RESN*(X_RESN+1)+i] = 20;
-    // }
-
-    // for (int i = 0; i < Y_RESN+1; i++) {
-    //     room[i*(X_RESN+1)] = 20;
-    //     room[i*(X_RESN+1)+X_RESN] = 20;
-    // }
     room[X_RESN/2] = 100;
+
+    for (int i = 0; i < (X_RESN+1)*(Y_RESN+1); i++) {
+        printf("%2f\n", room[i]);
+    }
 
     struct timeval timeStart, timeEnd, timeSystemStart; 
     double runTime=0, systemRunTime; 
@@ -124,10 +118,10 @@ int main (int argc, char* argv[]){
         int data_index = 0;
 
         // calculate temperature for each point
-        for (int i = 1; i < X_RESN; i++) {
-            for (int j = 1; j < Y_RESN; j++) {
-                data_index = i + j*(X_RESN+1);        
-                temp[data_index] = (room[i+(j-1)*(X_RESN+1)] + room[i+(j+1)*(X_RESN+1)] + room[data_index-1] + room[data_index+1])/4;
+        for (int i = 1; i < Y_RESN; i++) {
+            for (int j = 1; j < X_RESN; j++) {
+                data_index = i*(X_RESN+1) + j;        
+                temp[data_index] = (room[(i-1)*(X_RESN+1)+j] + room[(i+1)*(X_RESN+1)+j] + room[data_index-1] + room[data_index+1])/4;
             }
         }
 
@@ -140,9 +134,10 @@ int main (int argc, char* argv[]){
         }
 
         // draw the diagram
-        for (int i = 0; i < num_points; i++) {
+        for (int i = 0; i < (X_RESN+1)*(Y_RESN+1); i++) {
             if (room[i] > 20) {
                 XDrawPoint (display, win, gc, i%(X_RESN+1), floor(i/(X_RESN+1)));
+                usleep(1);
             }
         }
         XFlush (display);
@@ -152,7 +147,7 @@ int main (int argc, char* argv[]){
     runTime = (timeEnd.tv_sec - timeStart.tv_sec ) + (double)(timeEnd.tv_usec -timeStart.tv_usec)/1000000;  
 
     printf("Name: Liu Yang\nStudent ID: 116010151\nAssignment 3, N-Body Simulation, Sequential Implementation\n");
-    printf("Sequential %d Points RUN TIME is %lf\n", num_points, runTime); 
+    printf("Sequential %d Points RUN TIME is %lf\n", (X_RESN+1)*(Y_RESN+1), runTime); 
 
     usleep(250000);
     XFlush(display);
