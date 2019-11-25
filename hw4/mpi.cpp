@@ -135,7 +135,10 @@ int main (int argc, char* argv[]){
         for (int i = 0; i < X_RESN+1; i++) {
             up_row[i] = 20;
         }
-        up_row[X_RESN/2] = 100;
+
+        for (int i = -X_RESN/20; i < X_RESN/20+1; i++ ){
+            up_row[X_RESN/2+i] = 100;
+        }
     }
 
     if (rank == num_p-1) {
@@ -147,34 +150,40 @@ int main (int argc, char* argv[]){
     // start iteration
     for (int count = 0; count < NUMBER_OF_ITERATIONS; count++) {
 
-        printf("Process %d Start Iteration %d!\n", rank, count);
+        // printf("Process %d Start Iteration %d!\n", rank, count);
         // communicate with boundary row of neighbor processes
         if (rank > ROOT) {
             MPI_Send(&local_array[0], X_RESN+1, MPI_DOUBLE, rank-1, 0, MPI_COMM_WORLD);
-            printf("P%d sends first row to P%d!\n", rank, rank-1);
+            // printf("P%d sends first row to P%d!\n", rank, rank-1);
         }
 
         if (rank < num_p-1) {
             MPI_Send(&local_array[(local_row_num-1)*(X_RESN+1)], X_RESN+1, MPI_DOUBLE, rank+1, 0, MPI_COMM_WORLD);
-            printf("P%d sends last row to P%d!\n", rank, rank+1);
+            // printf("P%d sends last row to P%d!\n", rank, rank+1);
             MPI_Recv(&down_row[0], X_RESN+1, MPI_DOUBLE, rank+1, 0, MPI_COMM_WORLD, &status);
-            printf("P%d receives first row of P%d!\n", rank, rank+1);
+            // printf("P%d receives first row of P%d!\n", rank, rank+1);
         }
 
         if (rank > ROOT) {
             MPI_Recv(&up_row[0], X_RESN+1, MPI_DOUBLE, rank-1, 0, MPI_COMM_WORLD, &status);
-            printf("P%d receives last row of P%d!\n", rank, rank-1);
+            // printf("P%d receives last row of P%d!\n", rank, rank-1);
         }
 
         MPI_Barrier(MPI_COMM_WORLD);
 
-        printf("Process %d starts to compute temperature\n", rank);
+        // printf("Process %d starts to compute temperature\n", rank);
         // calculate temperature
         for (int i = 0; i < local_row_num; i++) {
             for (int j = 1; j < X_RESN; j++) {
-                printf("Row %d Column %d %d: \n", i, j, i*(X_RESN+1)+j);
-                local_temp[i*(X_RESN+1)+j] = (up_row[j] + down_row[j] + local_array[i*(X_RESN+1)+j-1] + local_array[i*(X_RESN+1)+j+1])/4;
-                printf("%4f\n", local_temp[i*(X_RESN+1)+j]);
+                if (i == 0) {
+                    local_temp[i*(X_RESN+1)+j] = (up_row[j] + local_array[(i+1)*(X_RESN+1)+j] + local_array[i*(X_RESN+1)+j-1] + local_array[i*(X_RESN+1)+j+1])/4;
+                } else if (i == local_row_num - 1) {
+                    local_temp[i*(X_RESN+1)+j] = (local_array[(i-1)*(X_RESN+1)+j] + down_row[j] + local_array[i*(X_RESN+1)+j-1] + local_array[i*(X_RESN+1)+j+1])/4;
+                } else {
+                    local_temp[i*(X_RESN+1)+j] = (local_array[(i-1)*(X_RESN+1)+j] + local_array[(i+1)*(X_RESN+1)+j] + local_array[i*(X_RESN+1)+j-1] + local_array[i*(X_RESN+1)+j+1])/4;
+                }
+                // printf("Row %d Column %d %d: \n", i, j, i*(X_RESN+1)+j);
+                // printf("%4f\n", local_temp[i*(X_RESN+1)+j]);
             }
         }
 
@@ -193,7 +202,7 @@ int main (int argc, char* argv[]){
             // upper wall
             for (int i = 0; i < X_RESN+1; i++) {
                 int temperature = 20;
-                if (i == static_cast <int>(floor((X_RESN+1)/2))) {
+                if (i == (int)(floor((X_RESN+1)/2))) {
                     temperature = 100;
                 }
             }
@@ -201,7 +210,9 @@ int main (int argc, char* argv[]){
             for (int i = 0; i < Y_RESN - 1; i++) {
                 for (int j = 0; j < X_RESN + 1; j++) {
                     int temperature = global_array[i*(X_RESN+1)+j];
-                    XDrawPoint (display, win, gc, j, i);
+                    if (temperature > 25) {
+                        XDrawPoint (display, win, gc, j, i);
+                    }
                 }
             }
 

@@ -9,7 +9,7 @@
 
 using namespace std;
 
-#define NUMBER_OF_ITERATIONS 300
+#define NUMBER_OF_ITERATIONS 500
 
 
 int main (int argc, char* argv[]){
@@ -104,10 +104,9 @@ int main (int argc, char* argv[]){
     for (int i = 0; i < (X_RESN+1)*(Y_RESN+1); i++) {
         room[i] = 20;
     }
-    room[X_RESN/2] = 100;
-
-    for (int i = 0; i < (X_RESN+1)*(Y_RESN+1); i++) {
-        printf("%2f\n", room[i]);
+    // set fireplace
+    for (int i = -X_RESN/20; i < X_RESN/20+1; i++ ){
+        room[X_RESN/2+i] = 100;
     }
 
     struct timeval timeStart, timeEnd, timeSystemStart; 
@@ -121,21 +120,22 @@ int main (int argc, char* argv[]){
         for (int i = 1; i < Y_RESN; i++) {
             for (int j = 1; j < X_RESN; j++) {
                 data_index = i*(X_RESN+1) + j;        
-                temp[data_index] = (room[(i-1)*(X_RESN+1)+j] + room[(i+1)*(X_RESN+1)+j] + room[data_index-1] + room[data_index+1])/4;
+                temp[data_index] = room[(i-1)*(X_RESN+1)+j] + room[(i+1)*(X_RESN+1)+j] + room[data_index-1] + room[data_index+1];
+                temp[data_index] = temp[data_index] * 0.25;
             }
         }
 
         // update temperature
-        for (int i = 1; i < X_RESN; i++) {
-            for (int j = 1; j < Y_RESN; j++) {
-                data_index = i + j*(X_RESN+1);        
+        for (int i = 1; i < Y_RESN; i++) {
+            for (int j = 1; j < X_RESN; j++) {
+                data_index = i*(X_RESN+1) + j;
                 room[data_index] = temp[data_index];
             }
         }
 
         // draw the diagram
         for (int i = 0; i < (X_RESN+1)*(Y_RESN+1); i++) {
-            if (room[i] > 20) {
+            if (temp[i] > 25) {
                 XDrawPoint (display, win, gc, i%(X_RESN+1), floor(i/(X_RESN+1)));
                 usleep(1);
             }

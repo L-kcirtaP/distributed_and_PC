@@ -8,7 +8,7 @@
 #include <X11/Xos.h>
 
 #define ROOT 0
-#define NUMBER_OF_ITERATIONS 1000
+#define NUMBER_OF_ITERATIONS 3000
 
 
 int X_RESN, Y_RESN, local_row_num, NUM_THREADS;
@@ -139,7 +139,10 @@ int main (int argc, char* argv[]) {
     for (int i = 0; i < (X_RESN+1)*(Y_RESN+1); i++) {
         room[i] = 20;
     }
-    room[X_RESN/2] = 100;
+    // set fireplace
+    for (int i = -X_RESN/20; i < X_RESN/20+1; i++ ){
+        room[X_RESN/2+i] = 100;
+    }
 
     struct timeval start_time, end_time;
     double run_time = 0;
@@ -158,13 +161,7 @@ int main (int argc, char* argv[]) {
 
         for (int i = 0; i < Y_RESN; i++) {
             for (int j = 0; j < X_RESN + 1; j++) {
-                // printf("col %d row %d TEMP %2f\n", i, j, room[i*(X_RESN+1)+j]);
-                // printf("Temperature %4f\n", room[i*(X_RESN+1)+j]);
-                if (room[i*(X_RESN+1)+j] > 20) {
-                    printf("row %d col %d!!!\n", i, j);
-                }
-
-                if (room[i*(X_RESN+1)+j] > 20) 
+                if (room[i*(X_RESN+1)+j] > 25) 
                     XDrawPoint(display, win, gc, j, i);
             }
         }
