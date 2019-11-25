@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cstdlib>
+#include <omp.h>
 #include <X11/Xlib.h>
 #include <X11/Xutil.h>
 #include <X11/Xos.h>
@@ -11,8 +12,9 @@
 
 int main (int argc, char* argv[]){
 
-    int X_RESN = atoi(argv[1]);             /* Argument 2: the width and height of the window */ 
-    int Y_RESN = atoi(argv[1]);
+    int num_t = atoi(argv[1]);
+    int X_RESN = atoi(argv[2]);             /* Argument 2: the width and height of the window */ 
+    int Y_RESN = atoi(argv[2]);
 
     // Window          win;       
     // char            *window_name = "test", *display_name = NULL;                     /* initialization for a window */
@@ -114,8 +116,11 @@ int main (int argc, char* argv[]){
         int data_index = 0;
 
         // calculate temperature for each point
-        for (int i = 1; i < Y_RESN; i++) {
-            for (int j = 1; j < X_RESN; j++) {
+        int i, j = 0;
+        #pragma omp parallel private(i, j)
+        #pragma omp for
+        for (i = 1; i < Y_RESN; i++) {
+            for (j = 1; j < X_RESN; j++) {
                 data_index = i*(X_RESN+1) + j;        
                 temp[data_index] = room[(i-1)*(X_RESN+1)+j] + room[(i+1)*(X_RESN+1)+j] + room[data_index-1] + room[data_index+1];
                 temp[data_index] = temp[data_index] * 0.25;
@@ -123,6 +128,7 @@ int main (int argc, char* argv[]){
         }
 
         // update temperature
+        #pragma omp for nowait
         for (int i = 1; i < Y_RESN; i++) {
             for (int j = 1; j < X_RESN; j++) {
                 data_index = i*(X_RESN+1) + j;
@@ -144,7 +150,7 @@ int main (int argc, char* argv[]){
     runTime = (timeEnd.tv_sec - timeStart.tv_sec ) + (double)(timeEnd.tv_usec -timeStart.tv_usec)/1000000;  
 
     // printf("Name: Liu Yang\nStudent ID: 116010151\nAssignment 3, N-Body Simulation, Sequential Implementation\n");
-    printf("Sequential %d*%d Size RUN TIME is %lf\n", X_RESN, Y_RESN, runTime); 
+    printf("OpenMP %d Threads %d*%d Size RUN TIME is %lf\n", num_t, X_RESN, Y_RESN, runTime); 
 
     // usleep(250000);
     // XFlush(display);
