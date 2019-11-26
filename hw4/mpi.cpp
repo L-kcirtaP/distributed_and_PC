@@ -149,7 +149,7 @@ int main (int argc, char* argv[]){
             up_row[i] = 20;
         }
 
-        for (int i = -X_RESN/20; i < X_RESN/20+1; i++ ){
+        for (int i = -X_RESN/6; i < X_RESN/6+1; i++ ){
             up_row[X_RESN/2+i] = 100;
         }
     }
@@ -199,30 +199,18 @@ int main (int argc, char* argv[]){
             }
         }
 
-        MPI_Gather(local_array, local_row_num*(Y_RESN+1), MPI_DOUBLE, global_array, local_row_num*(Y_RESN+1), MPI_DOUBLE, ROOT, MPI_COMM_WORLD);
-        MPI_Barrier(MPI_COMM_WORLD);
+        if (count % 5 == 0) {
+            MPI_Gather(local_array, local_row_num*(Y_RESN+1), MPI_DOUBLE, global_array, local_row_num*(Y_RESN+1), MPI_DOUBLE, ROOT, MPI_COMM_WORLD);
+            MPI_Barrier(MPI_COMM_WORLD);
 
-        if (rank == ROOT) {
+            if (rank == ROOT) {
 
-            // upper wall
-            for (int i = 0; i < X_RESN+1; i++) {
-                double temperature = 20;
-                if (i == (int)(floor((X_RESN+1)/2))) {
-                    temperature = 100;
-                }
-                int level = (temperature - 20) / 10;
-                if (level > 7) {
-                    level--;
-                }
-                if (level < 0) {
-                    level = 0;
-                }
-                XDrawPoint (display, win, gcs[level], i%(X_RESN+1), floor(i/(X_RESN+1)));
-            }
-
-            for (int i = 0; i < Y_RESN - 1; i++) {
-                for (int j = 0; j < X_RESN + 1; j++) {
-                    double temperature = global_array[i*(X_RESN+1)+j];
+                // upper wall
+                for (int i = 0; i < X_RESN+1; i++) {
+                    double temperature = 20;
+                    if (i == (int)(floor((X_RESN+1)/2))) {
+                        temperature = 100;
+                    }
                     int level = (temperature - 20) / 10;
                     if (level > 7) {
                         level--;
@@ -230,18 +218,32 @@ int main (int argc, char* argv[]){
                     if (level < 0) {
                         level = 0;
                     }
-                    XDrawPoint (display, win, gcs[level], j, i);
+                    XDrawPoint (display, win, gcs[level], i%(X_RESN+1), floor(i/(X_RESN+1)));
                 }
-            }
 
-            // lower wall
-            if (local_row_num*num_p == Y_RESN-1) {
-                for (int i = 0; i < X_RESN+1; i++) {
-                    int temperature = 20;
-                    XDrawPoint (display, win, gcs[0], Y_RESN, i);
+                for (int i = 0; i < Y_RESN - 1; i++) {
+                    for (int j = 0; j < X_RESN + 1; j++) {
+                        double temperature = global_array[i*(X_RESN+1)+j];
+                        int level = (temperature - 20) / 10;
+                        if (level > 7) {
+                            level--;
+                        }
+                        if (level < 0) {
+                            level = 0;
+                        }
+                        XDrawPoint (display, win, gcs[level], j, i);
+                    }
                 }
+
+                // lower wall
+                if (local_row_num*num_p == Y_RESN-1) {
+                    for (int i = 0; i < X_RESN+1; i++) {
+                        int temperature = 20;
+                        XDrawPoint (display, win, gcs[0], Y_RESN, i);
+                    }
+                }
+                XFlush(display);
             }
-            XFlush(display);
         }
     }
 

@@ -151,7 +151,7 @@ int main (int argc, char* argv[]) {
         room[i] = 20;
     }
     // set fireplace
-    for (int i = -X_RESN/8; i < X_RESN/8+1; i++ ){
+    for (int i = -X_RESN/6; i < X_RESN/6+1; i++ ){
         room[X_RESN/2+i] = 100;
     }
 
@@ -170,27 +170,28 @@ int main (int argc, char* argv[]) {
             pthread_join(threads[i], NULL);
         }
 
-        int level;
-        for (int i = 0; i < Y_RESN; i++) {
-            for (int j = 0; j < X_RESN + 1; j++) {
-                double temperature = room[i*(X_RESN+1)+j];
-                level = (int) (temperature - 20) / 10;
-                if (level > 7) {
-                    level--;
+        if (count % 5 == 0) {
+            int level;
+            for (int i = 0; i < Y_RESN; i++) {
+                for (int j = 0; j < X_RESN + 1; j++) {
+                    double temperature = room[i*(X_RESN+1)+j];
+                    level = (int) (temperature - 20) / 10;
+                    if (level > 7) {
+                        level--;
+                    }
+                    if (level < 0) {
+                        level = 0;
+                    }
+                    XDrawPoint (display, win, gcs[level], j, i);
                 }
-                if (level < 0) {
-                    level = 0;
-                }
-                XDrawPoint (display, win, gcs[level], j, i);
             }
-        }
 
-        // lower wall
-        for (int j = 0; j < X_RESN + 1; j++) {
-            XDrawPoint (display, win, gcs[0], j, Y_RESN+1);
+            // lower wall
+            for (int j = 0; j < X_RESN + 1; j++) {
+                XDrawPoint (display, win, gcs[0], j, Y_RESN+1);
+            }
+            XFlush(display);
         }
-
-        XFlush(display);
     }
     
     gettimeofday(&end_time, NULL);

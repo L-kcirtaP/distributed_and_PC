@@ -116,7 +116,7 @@ int main (int argc, char* argv[]){
         room[i] = 20;
     }
     // set fireplace
-    for (int i = -X_RESN/8; i < X_RESN/8+1; i++ ){
+    for (int i = -X_RESN/6; i < X_RESN/6+1; i++ ){
         room[X_RESN/2+i] = 100;
     }
 
@@ -148,18 +148,20 @@ int main (int argc, char* argv[]){
             }
         }
 
-        // draw the diagram
-        for (int i = 0; i < (X_RESN+1)*(Y_RESN+1); i++) {
-            double temperature = room[i];
-            int level = (temperature - 20) / 10;
-            if (level > 7) {
-                level--;
+        if (count % 5 == 0) {
+            // draw the diagram
+            for (int i = 0; i < (X_RESN+1)*(Y_RESN+1); i++) {
+                double temperature = room[i];
+                int level = (temperature - 20) / 10;
+                if (level > 7) {
+                    level--;
+                }
+                if (level < 0) {
+                    level = 0;
+                }
+                XDrawPoint (display, win, gcs[level], i%(X_RESN+1), floor(i/(X_RESN+1)));
             }
-            if (level < 0) {
-                level = 0;
-            }
-            XDrawPoint (display, win, gcs[level], i%(X_RESN+1), floor(i/(X_RESN+1)));
-        }
+        }    
         XFlush (display);
     }
 
