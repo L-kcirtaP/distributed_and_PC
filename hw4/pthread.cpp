@@ -8,7 +8,7 @@
 #include <X11/Xos.h>
 
 #define ROOT 0
-#define NUMBER_OF_ITERATIONS 3000
+#define NUMBER_OF_ITERATIONS 100
 
 
 int X_RESN, Y_RESN, local_row_num, NUM_THREADS;

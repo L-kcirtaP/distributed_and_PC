@@ -8,7 +8,7 @@
 #include <X11/Xos.h>
 
 #define ROOT 0
-#define NUMBER_OF_ITERATIONS 300
+#define NUMBER_OF_ITERATIONS 100
 
 
 int main (int argc, char* argv[]){

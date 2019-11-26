@@ -6,7 +6,7 @@
 #include <time.h>
 #include <math.h>
 
-#define NUMBER_OF_ITERATIONS 500
+#define NUMBER_OF_ITERATIONS 100
 
 
 int main (int argc, char* argv[]){
