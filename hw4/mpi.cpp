@@ -1,5 +1,6 @@
 #include <cstdlib>
 #include <math.h>
+#include <stdio.h>
 #include <mpi.h>
 #include <time.h>
 #include <assert.h>

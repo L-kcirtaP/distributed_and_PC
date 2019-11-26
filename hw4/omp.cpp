@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cstdlib>
+#include <stdio.h>
 #include <omp.h>
 #include <X11/Xlib.h>
 #include <X11/Xutil.h>
